@@ -13,33 +13,57 @@ public class Player1Keyboard : UnityInputDeviceProfile
 		{
 			new InputControlMapping ()
 			{
-				Handle = "Action 1",
+				Handle = "A",
 				Target = InputControlType.Action1,
 				Source = new UnityKeyCodeSource(KeyCode.Space)
 			},
 			new InputControlMapping ()
 			{
-				Handle = "Action 2",
+				Handle = "B",
 				Target = InputControlType.Action2,
-				Source = new UnityKeyCodeSource(KeyCode.P)
+				Source = new UnityKeyCodeSource(KeyCode.X)
 			},
 			new InputControlMapping ()
 			{
-				Handle = "Action 3",
+				Handle = "X",
 				Target = InputControlType.Action3,
-				Source = new UnityKeyCodeSource(KeyCode.C)
+				Source = new UnityKeyCodeSource(KeyCode.Z)
 			},
 			new InputControlMapping ()
 			{
-				Handle = "Action 4",
+				Handle = "Y",
 				Target = InputControlType.Action4,
-				Source = new UnityKeyCodeSource(KeyCode.P)
+				Source = new UnityKeyCodeSource(KeyCode.LeftShift)
 			},
 			new InputControlMapping ()
 			{
 				Handle = "Menu",
 				Target = InputControlType.Menu,
 				Source = new UnityKeyCodeSource(KeyCode.Escape)
+			},
+			new InputControlMapping ()
+			{
+				Handle = "LB",
+				Target = InputControlType.LeftBumper,
+				Source = new UnityKeyCodeSource(KeyCode.Q)
+			},
+			new InputControlMapping ()
+			{
+				Handle = "RB",
+				Target = InputControlType.RightBumper,
+				Source = new UnityKeyCodeSource(KeyCode.P)
+			},
+			new InputControlMapping ()
+			{
+				Handle = "LT",
+				Target = InputControlType.LeftTrigger,
+				Source = new UnityKeyCodeSource(KeyCode.E)
+			},
+			new InputControlMapping ()
+			{
+				Handle = "RT",
+				Target = InputControlType.RightTrigger,
+				Source = new UnityKeyCodeSource(KeyCode.O)
 			}
 		};
 		
