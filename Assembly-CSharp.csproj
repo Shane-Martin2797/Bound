@@ -157,6 +157,10 @@
      <Compile Include="Assets\InControl\Test\TestInputManager.cs" />
      <Compile Include="Assets\Scripts\Player1Keyboard.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PushControl.cs" />
+     <Compile Include="Assets\Scripts\SplitScreenManager.cs" />
+     <Compile Include="Assets\Scripts\UI\HUD.cs" />
+     <Compile Include="Assets\Scripts\UI\Scenes.cs" />
      <Compile Include="Assets\Scripts\WallController.cs" />
      <None Include="Assets\InControl\README\README.txt" />
  <Reference Include="UnityEngine.UI">

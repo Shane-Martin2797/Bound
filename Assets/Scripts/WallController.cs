@@ -2,28 +2,38 @@
 using System.Collections;
 
 public class WallController : MonoBehaviour
-{
-	public float wallSpeed = 10;
-	
-	void OnCollisionStay (Collision col)
+{	
+	void OnCollisionEnter (Collision col)
 	{
-		Notify (col.gameObject);
+		NotifyEnter (col.gameObject);
 	}
-	void Notify (GameObject gameObj)
+	void OnCollisionExit (Collision col)
+	{
+		NotifyExit (col.gameObject);
+	}
+
+	void OnTriggerEnter (Collider col)
+	{
+		NotifyEnter (col.gameObject);
+	}
+	void OnTriggerExit (Collider col)
+	{
+		NotifyExit (col.gameObject);
+	}
+	
+	void NotifyEnter (GameObject gameObj)
 	{
 		PlayerController player = gameObj.GetComponent<PlayerController> ();
 		if (player != null) {
-			WallMove (player);
+			player.targetWall = this;
 		}
 	}
-	
-	void WallMove (PlayerController player)
+	void NotifyExit (GameObject gameObj)
 	{
-		Vector3 direction = (transform.position - player.transform.position).normalized;
-		direction.y = 0;
-		direction.x = 0;
-		
-		transform.Translate (direction * Time.deltaTime * wallSpeed);
+		PlayerController player = gameObj.GetComponent<PlayerController> ();
+		if (player != null) {
+			player.targetWall = null;
+		}
 	}
 	
 }
