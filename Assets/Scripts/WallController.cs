@@ -3,20 +3,20 @@ using System.Collections;
 
 public class WallController : MonoBehaviour
 {	
-	void OnCollisionEnter (Collision col)
+	void OnCollisionEnter2D (Collision2D col)
 	{
 		NotifyEnter (col.gameObject);
 	}
-	void OnCollisionExit (Collision col)
+	void OnCollisionExit2D (Collision2D col)
 	{
 		NotifyExit (col.gameObject);
 	}
 
-	void OnTriggerEnter (Collider col)
+	void OnTriggerEnter2D (Collider2D col)
 	{
 		NotifyEnter (col.gameObject);
 	}
-	void OnTriggerExit (Collider col)
+	void OnTriggerExit2D (Collider2D col)
 	{
 		NotifyExit (col.gameObject);
 	}
@@ -25,14 +25,12 @@ public class WallController : MonoBehaviour
 	{
 		PlayerController player = gameObj.GetComponent<PlayerController> ();
 		if (player != null) {
-			player.targetWall = this;
 		}
 	}
 	void NotifyExit (GameObject gameObj)
 	{
 		PlayerController player = gameObj.GetComponent<PlayerController> ();
 		if (player != null) {
-			player.targetWall = null;
 		}
 	}
 	
