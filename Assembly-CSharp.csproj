@@ -155,10 +155,12 @@
      <Compile Include="Assets\InControl\Source\XInput\XInputDotNetPure\GamePad.cs" />
      <Compile Include="Assets\InControl\Source\XInput\XInputDotNetPure\Utils.cs" />
      <Compile Include="Assets\InControl\Test\TestInputManager.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GhostControl.cs" />
      <Compile Include="Assets\Scripts\Player1Keyboard.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PushControl.cs" />
+     <Compile Include="Assets\Scripts\SingletonBehaviour.cs" />
      <Compile Include="Assets\Scripts\UI\HUD.cs" />
      <Compile Include="Assets\Scripts\UI\Scenes.cs" />
      <Compile Include="Assets\Scripts\WallController.cs" />
