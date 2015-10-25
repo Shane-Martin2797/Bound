@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour
 	public bool hasInputDevice { get { return inputDevice != null; } }
 	
 	
-	private float movementSpeed = 1;
+	public float movementSpeed = 10f;
 	public int team = 1;
+	public bool canMove = true;
 	
 
 	// Use this for initialization
@@ -36,9 +37,11 @@ public class PlayerController : MonoBehaviour
 	
 	void Movement ()
 	{
-		float angle = Mathf.Rad2Deg * Mathf.Atan2 (inputDevice.LeftStickY.Value, inputDevice.LeftStickX.Value) - 90;
-		GetComponent<Rigidbody2D> ().MoveRotation (angle);
-		transform.Translate (Vector3.forward * movementSpeed);
+		if (canMove) {
+			float angle = Mathf.Rad2Deg * Mathf.Atan2 (inputDevice.LeftStickY.Value, inputDevice.LeftStickX.Value) - 90;
+			GetComponent<Rigidbody2D> ().MoveRotation (angle);
+			transform.Translate (Vector3.forward * movementSpeed * Time.deltaTime);
+		}
 	}
 	
 	void OnDestroy ()

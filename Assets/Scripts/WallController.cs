@@ -23,15 +23,33 @@ public class WallController : MonoBehaviour
 	
 	void NotifyEnter (GameObject gameObj)
 	{
-		PlayerController player = gameObj.GetComponent<PlayerController> ();
+		PushControl player = gameObj.GetComponent<PushControl> ();
+		GhostControl ghost = gameObj.GetComponent<GhostControl> ();
 		if (player != null) {
+			player.targetedWall = this;
+		} else if (ghost != null) {
+			ghost.TouchedWall ();
 		}
 	}
 	void NotifyExit (GameObject gameObj)
 	{
-		PlayerController player = gameObj.GetComponent<PlayerController> ();
+		PushControl player = gameObj.GetComponent<PushControl> ();
 		if (player != null) {
+			player.targetedWall = null;
+		} 
+	}
+	
+	public void Move (Vector2 input, float speed)
+	{
+		float speedM = 0;
+		if (transform.localEulerAngles.z == 90 || transform.localEulerAngles.z == 270) {
+			speedM = input.x;
+		} else if (transform.localEulerAngles.z == 0 || transform.localEulerAngles.z == 180 || transform.localEulerAngles.z == 360) {
+			speedM = input.y;
 		}
+		
+		transform.Translate (Vector3.up * Time.deltaTime * speed * speedM);
+		
 	}
 	
 }
