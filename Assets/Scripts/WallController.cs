@@ -24,12 +24,9 @@ public class WallController : MonoBehaviour
 	void NotifyEnter (GameObject gameObj)
 	{
 		PushControl player = gameObj.GetComponent<PushControl> ();
-		GhostControl ghost = gameObj.GetComponent<GhostControl> ();
 		if (player != null) {
 			player.targetedWall = this;
-		} else if (ghost != null) {
-			ghost.TouchedWall ();
-		}
+		} 
 	}
 	void NotifyExit (GameObject gameObj)
 	{
