@@ -74,33 +74,27 @@ public class PushControl : MonoBehaviour
 	void SearchForEnemyGhost ()
 	{
 		for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {
-			GameController.Instance.GhostList [i];
 			
-			Vector3 deltaToPlayer = (list[i].transform.position - transform.position);
+			Vector3 deltaToPlayer = (GameController.Instance.GhostList [i].transform.position - transform.position);
 			Vector3 directionToPlayer = deltaToPlayer.normalized;
 			
 			float dot = Vector3.Dot (transform.up, directionToPlayer);
-			float cone = Mathf.Cos(visionCone/2 * Mathf.Deg2Rad);
+			float cone = Mathf.Cos (visionCone / 2 * Mathf.Deg2Rad);
 			
-			if(dot > cone){
-				float distance = Vector3.Distance (transform.position, list[i].transform.position);
+			if (dot > cone) {
+				float distance = Vector3.Distance (transform.position, GameController.Instance.GhostList [i].transform.position);
 				if (distance < visionDistance) {
 					Physics2D.raycastsHitTriggers = false;
-					RaycastHit2D hit = Physics2D.Raycast(transform.position + transform.up, directionToPlayer, visionDistance, collidersHit.value);
+					RaycastHit2D hit = Physics2D.Raycast (transform.position + transform.up, directionToPlayer, visionDistance, collidersHit.value);
 					if (hit != null) {
-						if(list[i] != null){
-							if(hit.collider.gameObject == list[i].gameObject){
-								targetLastPosition = list[i];
-								AITargetting ai = list[i].GetComponent<AITargetting>();
-								if(ai != null){
-									ai.CurrentlyTargetted(this.gameObject);
-								}
-								timeWithoutSeeingTarget = timeWithoutSeeingTargetValue;
+						if (GameController.Instance.GhostList [i] != null) {
+							if (hit.collider.gameObject == GameController.Instance.GhostList [i]) {
+								GameController.Instance.GhostList [i].Stun ();
 							}
 						}
 					}
 				}
 				
+			}
 		}
 	}
-}

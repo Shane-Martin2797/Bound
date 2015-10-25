@@ -11,6 +11,7 @@ public class GhostControl : MonoBehaviour
 	float defaultTimer = .25f;
 	float holdTimer = 3;
 	float holdTimerDefault = 3;
+	bool stunned;
 	
 	void OnCollisionEnter2D (Collision2D col)
 	{
@@ -83,5 +84,11 @@ public class GhostControl : MonoBehaviour
 			}
 		}
 		
+	}
+	
+	public void Stun ()
+	{
+		if (stunned) {
+		}
 	}
 }
