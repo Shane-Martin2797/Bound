@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	
 	
 	private float movementSpeed = 1;
+	public int team = 1;
 	
 
 	// Use this for initialization

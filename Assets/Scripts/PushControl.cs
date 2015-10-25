@@ -7,6 +7,7 @@ public class PushControl : MonoBehaviour
 	
 	private WallController heldWall;
 	public WallController targetedWall;
+	public LayerMask collidersHit;
 	
 	void Awake ()
 	{
@@ -15,10 +16,24 @@ public class PushControl : MonoBehaviour
 	
 	void Update ()
 	{
+		CheckWall ();
 	}
 	
 	void PushWall ()
-	{		
-	}
+	{
 	
+	}
+	void CheckWall ()
+	{
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector3.up, 1, collidersHit);
+		Debug.DrawRay (transform.position, transform.forward, Color.blue);
+		if (hit != null) {
+			if (hit.collider != null) {
+				WallController wall = hit.collider.GetComponent<WallController> ();
+				if (wall != null) {
+					targetedWall = wall;
+				}
+			}
+		}
+	}
 }
