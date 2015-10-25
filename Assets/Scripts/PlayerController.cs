@@ -11,6 +11,38 @@ public class PlayerController : MonoBehaviour
 	public InControl.InputDevice inputDevice { get; private set; }
 	public bool hasInputDevice { get { return inputDevice != null; } }
 	
+	private float defaultMovmentSpeed = 10;
+	private float closeMovementSpeed = 15;
+	
+	public PlayerController teammate;
+	
+	void OnTriggerEnter2D (Collider2D col)
+	{
+		PlayerController collidedPlayer = col.GetComponent<PlayerController> ();
+		if (collidedPlayer != null) {
+			if (collidedPlayer.team == this.team) {
+				collidedPlayer.SpeedUp ();
+			}
+		}
+	}
+	void OnTriggerExit2D (Collider2D col)
+	{
+		PlayerController collidedPlayer = col.GetComponent<PlayerController> ();
+		if (collidedPlayer != null) {
+			if (collidedPlayer.team == this.team) {
+				collidedPlayer.SlowDown ();
+			}
+		}
+	}
+	
+	public void SpeedUp ()
+	{
+		movementSpeed = closeMovementSpeed;
+	}
+	public void SlowDown ()
+	{
+		movementSpeed = defaultMovmentSpeed;
+	}
 	
 	public float movementSpeed = 10f;
 	public int team = 1;
@@ -20,7 +52,8 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
-		//HUD.LoadForPlayer (this);
+		defaultMovmentSpeed = movementSpeed;
+		closeMovementSpeed = movementSpeed * 1.5f;
 	}
 	
 	// Update is called once per frame

@@ -10,7 +10,7 @@ public class PushControl : MonoBehaviour
 	public float grabDist = 1;
 	public float moveModifier = .7f;
 	
-	public float visionDistance = 10;
+	public float visionDistance = 100;
 	public float visionCone = 30;
 	public LayerMask collidersHit;
 
@@ -31,6 +31,7 @@ public class PushControl : MonoBehaviour
 		if (heldWall != null) {
 			PushWall ();
 		}
+		SearchForEnemyGhost ();
 	}
 	
 	void PushWall ()
@@ -74,27 +75,33 @@ public class PushControl : MonoBehaviour
 	void SearchForEnemyGhost ()
 	{
 		for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {
+			GhostControl ghost = GameController.Instance.GhostList [i];
+			if (ghost.player.team != player.team) {
+				Vector3 deltaToPlayer = (ghost.transform.position - transform.position);
+				Vector3 directionToPlayer = deltaToPlayer.normalized;
 			
-			Vector3 deltaToPlayer = (GameController.Instance.GhostList [i].transform.position - transform.position);
-			Vector3 directionToPlayer = deltaToPlayer.normalized;
+				float dot = Vector3.Dot (transform.forward, directionToPlayer);
+				float cone = Mathf.Cos (visionCone / 2 * Mathf.Deg2Rad);
+				Debug.DrawRay (transform.position, directionToPlayer, Color.red);
 			
-			float dot = Vector3.Dot (transform.up, directionToPlayer);
-			float cone = Mathf.Cos (visionCone / 2 * Mathf.Deg2Rad);
-			
-			if (dot > cone) {
-				float distance = Vector3.Distance (transform.position, GameController.Instance.GhostList [i].transform.position);
-				if (distance < visionDistance) {
-					Physics2D.raycastsHitTriggers = false;
-					RaycastHit2D hit = Physics2D.Raycast (transform.position + transform.up, directionToPlayer, visionDistance, collidersHit.value);
-					if (hit != null) {
-						if (GameController.Instance.GhostList [i] != null) {
-							if (hit.collider.gameObject == GameController.Instance.GhostList [i]) {
-								GameController.Instance.GhostList [i].Stun ();
+				if (dot > cone) {
+					float distance = Vector3.Distance (transform.position, ghost.transform.position);
+					if (distance < visionDistance) {
+						Physics2D.queriesHitTriggers = false;
+						RaycastHit2D hit = Physics2D.Raycast (transform.position + transform.up, directionToPlayer, visionDistance, collidersHit.value);
+						if (hit != null) {
+							if (ghost != null) {
+								if (hit.collider.gameObject == ghost.gameObject) {
+									if (hit.collider.gameObject.GetComponent<PlayerController> ().team != player.team) {
+										ghost.Stun ();
+									}
+								}
 							}
 						}
 					}
-				}
 				
+				}
 			}
 		}
 	}
+}

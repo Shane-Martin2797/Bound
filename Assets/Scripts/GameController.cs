@@ -6,9 +6,18 @@ public class GameController : SingletonBehaviour<GameController>
 {
 	public static event System.Action<float> OnTimeChange;
 	public List<GhostControl> GhostList = new List<GhostControl> ();
+	public float timer = 120;
 	
 	protected override void OnSingletonAwake ()
 	{
 		
+	}
+	
+	void Update ()
+	{
+		timer -= Time.deltaTime;
+		if (OnTimeChange != null) {
+			OnTimeChange (timer);
+		}
 	}
 }
