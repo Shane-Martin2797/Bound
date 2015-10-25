@@ -14,8 +14,6 @@ public class PlayerController : MonoBehaviour
 	private float defaultMovmentSpeed = 10;
 	private float closeMovementSpeed = 15;
 	
-	public PlayerController teammate;
-	
 	void OnTriggerEnter2D (Collider2D col)
 	{
 		PlayerController collidedPlayer = col.GetComponent<PlayerController> ();

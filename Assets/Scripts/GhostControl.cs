@@ -168,11 +168,22 @@ public class GhostControl : MonoBehaviour
 		moveTowardTeam = false;
 	}
 	
+	PlayerController teammate;
 	void MoveTeam ()
 	{
-		Vector2 direction = (player.teammate.transform.position - transform.position).normalized;
-		float angle = Mathf.Rad2Deg * Mathf.Atan2 (direction.y, direction.x) - 90;
-		GetComponent<Rigidbody2D> ().MoveRotation (angle);
-		transform.Translate (Vector3.forward * player.movementSpeed * Time.deltaTime);
+	
+		if (teammate == null) {
+			for (int i = 0; i < GameController.Instance.HumanList.Count; ++i) {
+				if (GameController.Instance.HumanList [i].player.team == player.team) {
+					teammate = GameController.Instance.HumanList [i].player;
+				}
+			}
+		} 
+		if (teammate != null) {
+			Vector2 direction = (teammate.transform.position - transform.position).normalized;
+			float angle = Mathf.Rad2Deg * Mathf.Atan2 (direction.y, direction.x) - 90;
+			GetComponent<Rigidbody2D> ().MoveRotation (angle);
+			transform.Translate (Vector3.forward * player.movementSpeed * Time.deltaTime);
+		}
 	}
 }

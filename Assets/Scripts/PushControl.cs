@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PushControl : MonoBehaviour
 {
-	private PlayerController player;
+	public PlayerController player;
 	
 	private WallController heldWall;
 	public WallController targetedWall;
@@ -19,6 +19,7 @@ public class PushControl : MonoBehaviour
 	void Awake ()
 	{
 		player = this.GetComponent<PlayerController> ();
+		GameController.Instance.HumanList.Add (this);
 	}
 	
 	void Update ()
