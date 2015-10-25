@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: e11e906f054fee948ba780250da86e75
+guid: ff5c0fdb0260a754f9ce18c2b99266a4
 SubstanceImporter:
   serializedVersion: 5
   materialInstances:
-  - serializedVersion: 12
+  - serializedVersion: 16
     name: New_Graph
     prototypeName: New_Graph
     shader: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: 
+    renderQueue: -1
+    lightmapFlags: 5
     inputs:
     - name: $outputsize
       value:
@@ -271,3 +274,5 @@ SubstanceImporter:
   - New_Graph_1
   - New_Graph_2
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
