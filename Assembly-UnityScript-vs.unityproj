@@ -46,12 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\Medieval_House 1\Scripts\OpenDoor.js" />
+     <Compile Include="Assets\Prefabs\Medieval_House 1\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
+     <Compile Include="Assets\Prefabs\Medieval_House 1\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
+     <Compile Include="Assets\Prefabs\Medieval_House 1\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
+     <Compile Include="Assets\Prefabs\Medieval_House 1\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
+     <Compile Include="Assets\Prefabs\Medieval_House 1\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
      <Compile Include="Assets\Prefabs\Medieval_House\Scripts\OpenDoor.js" />
      <Compile Include="Assets\Prefabs\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
      <Compile Include="Assets\Prefabs\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
      <Compile Include="Assets\Prefabs\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
      <Compile Include="Assets\Prefabs\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
      <Compile Include="Assets\Prefabs\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
+     <None Include="Assets\Prefabs\Medieval_House 1\Info.txt" />
      <None Include="Assets\Prefabs\Medieval_House\Info.txt" />
      <None Include="Assets\InControl\README\README.txt" />
      <None Include="Assets\Art\Skyboxes\_skybox info.txt" />

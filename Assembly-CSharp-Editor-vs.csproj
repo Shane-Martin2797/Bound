@@ -58,6 +58,7 @@
      <Compile Include="Assets\InControl\Editor\ReorderableList\ReorderableListFlags.cs" />
      <Compile Include="Assets\InControl\Editor\ReorderableList\ReorderableListGUI.cs" />
      <Compile Include="Assets\InControl\Editor\ReorderableList\SerializedPropertyAdaptor.cs" />
+     <None Include="Assets\Prefabs\Medieval_House 1\Info.txt" />
      <None Include="Assets\Prefabs\Medieval_House\Info.txt" />
      <None Include="Assets\InControl\README\README.txt" />
      <None Include="Assets\Art\Skyboxes\_skybox info.txt" />
@@ -112,10 +113,6 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files (x86)/Unity 5/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{07018F7E-F004-47E8-CC7D-80BA332A087C}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
