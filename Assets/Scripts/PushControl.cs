@@ -88,7 +88,7 @@ public class PushControl : MonoBehaviour
 				if (dot > cone) {
 					float distance = Vector3.Distance (transform.position, ghost.transform.position);
 					if (distance < visionDistance) {
-						Physics2D.queriesHitTriggers = false;
+						Physics2D.raycastsHitTriggers = false;
 						RaycastHit2D hit = Physics2D.Raycast (transform.position + transform.up, directionToPlayer, visionDistance, collidersHit.value);
 						if (hit != null) {
 							if (ghost != null) {

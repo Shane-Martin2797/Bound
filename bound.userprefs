@@ -1,15 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/End/EndScore.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\Title\TitleManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI/End/EndScore.cs" Line="12" Column="64" />
-      <File FileName="Assets/Scripts/UI/Title/TitleManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GhostControl.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PushControl.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EndZone.cs" Line="1" Column="1" />
-      <File FileName="../../bitbucket/bound/Assets/Scripts/UI/Scenes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PushControl.cs" Line="108" Column="2" />
+      <File FileName="Assets\Scripts\UI\Title\TitleManager.cs" Line="54" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
