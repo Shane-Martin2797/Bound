@@ -10,6 +10,8 @@ public class GameController : SingletonBehaviour<GameController>
 	public int[] Teams = new int[10];
 	public float timer = 120;
 	
+	public static int winTeam;
+	
 	protected override void OnSingletonAwake ()
 	{
 		
@@ -44,7 +46,10 @@ public class GameController : SingletonBehaviour<GameController>
 	
 	public void GameOver (int teamNumber)
 	{
-		Debug.Log (teamNumber);
-		//Application.LoadLevel(Scenes.EndScreen);
+		winTeam = teamNumber;
+		int wins = PlayerPrefs.GetInt ("Team" + teamNumber, 0);
+		wins++;
+		PlayerPrefs.SetInt ("Team" + teamNumber, wins);
+		Application.LoadLevel (Scenes.EndScreen);
 	}
 }

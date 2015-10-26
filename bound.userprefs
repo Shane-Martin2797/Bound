@@ -1,17 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
-    <Files>
-      <File FileName="Assets/Scripts/UI/Title/TitleManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GhostControl.cs" Line="1" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/Title/TitleManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/End/EndScore.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI/Title/TitleManager.cs" Line="42" Column="4" />
-      <File FileName="Assets/Scripts/GhostControl.cs" Line="75" Column="29" />
->>>>>>> 213d3b6f0b918f49449e25c0bc1b8f0fcb86f1e9
+      <File FileName="Assets/Scripts/UI/End/EndScore.cs" Line="12" Column="60" />
+      <File FileName="Assets/Scripts/UI/Title/TitleManager.cs" Line="54" Column="1" />
+      <File FileName="Assets/Scripts/GhostControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PushControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />

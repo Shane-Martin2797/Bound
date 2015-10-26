@@ -163,6 +163,7 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PushControl.cs" />
      <Compile Include="Assets\Scripts\SingletonBehaviour.cs" />
+     <Compile Include="Assets\Scripts\UI\End\EndScore.cs" />
      <Compile Include="Assets\Scripts\UI\HUD.cs" />
      <Compile Include="Assets\Scripts\UI\Scenes.cs" />
      <Compile Include="Assets\Scripts\UI\Title\TitleManager.cs" />

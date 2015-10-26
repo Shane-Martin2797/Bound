@@ -6,6 +6,8 @@ public class EndZone : MonoBehaviour
 {
 	public static List<PlayerController> finishedPlayers = new List<PlayerController> ();
 
+	public int teamWin;
+	
 	void OnTriggerEnter2D (Collider2D col)
 	{
 		NotifyEnter (col.gameObject);
@@ -45,14 +47,16 @@ public class EndZone : MonoBehaviour
 	void CheckWon (PlayerController player)
 	{
 		int teamNumber = player.team;
-		int totalForTeam = GameController.Instance.Teams [teamNumber];
-		for (int i = 0; i < finishedPlayers.Count; ++i) {
-			if (finishedPlayers [i].team == teamNumber) {
-				totalForTeam--;
+		if (teamNumber == teamWin) {
+			int totalForTeam = GameController.Instance.Teams [teamNumber];
+			for (int i = 0; i < finishedPlayers.Count; ++i) {
+				if (finishedPlayers [i].team == teamNumber) {
+					totalForTeam--;
+				}
 			}
-		}
-		if (totalForTeam == 0) {
-			GameController.Instance.GameOver (teamNumber);
+			if (totalForTeam == 0) {
+				GameController.Instance.GameOver (teamNumber);
+			}
 		}
 	}
 }

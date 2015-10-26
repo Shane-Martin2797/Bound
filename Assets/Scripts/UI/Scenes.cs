@@ -7,4 +7,5 @@ public static class Scenes
 	public const string Maze = "Maze";
 	public const string Title = "Title";
 	public const string EndScreen = "EndScreen";
+	public const string World = "World";
 }

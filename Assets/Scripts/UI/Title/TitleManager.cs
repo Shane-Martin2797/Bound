@@ -44,7 +44,7 @@ public class TitleManager : MonoBehaviour
 
 	void StartGame ()
 	{
-		Application.LoadLevel (Scenes.Maze);
+		Application.LoadLevel (Scenes.World);
 	}
 	
 	
