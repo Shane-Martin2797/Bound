@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\Title\TitleManager.cs">
     <Files>
       <File FileName="Assets\Scripts\PushControl.cs" Line="108" Column="2" />
-      <File FileName="Assets\Scripts\UI\Title\TitleManager.cs" Line="54" Column="1" />
+      <File FileName="Assets\Scripts\UI\Title\TitleManager.cs" Line="21" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
