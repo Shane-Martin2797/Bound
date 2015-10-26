@@ -165,6 +165,7 @@
      <Compile Include="Assets\Scripts\SingletonBehaviour.cs" />
      <Compile Include="Assets\Scripts\UI\HUD.cs" />
      <Compile Include="Assets\Scripts\UI\Scenes.cs" />
+     <Compile Include="Assets\Scripts\UI\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\WallController.cs" />
      <None Include="Assets\Prefabs\Medieval_House\Info.txt" />
      <None Include="Assets\InControl\README\README.txt" />

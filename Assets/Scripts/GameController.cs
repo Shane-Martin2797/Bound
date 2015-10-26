@@ -45,5 +45,6 @@ public class GameController : SingletonBehaviour<GameController>
 	public void GameOver (int teamNumber)
 	{
 		Debug.Log (teamNumber);
+		//Application.LoadLevel(Scenes.EndScreen);
 	}
 }

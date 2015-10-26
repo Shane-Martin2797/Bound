@@ -72,6 +72,7 @@ public class GhostControl : MonoBehaviour
 		grabbed = false;
 		heldPlayer.transform.parent = null;
 		heldPlayer.GetComponent<Collider2D> ().enabled = true;
+		heldPlayer.canMove = true;
 		heldPlayer = null;
 		grabDelay = grabDelayDefault;
 		for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {
@@ -88,13 +89,14 @@ public class GhostControl : MonoBehaviour
 	
 	void Awake ()
 	{
-		player = this.GetComponent<PlayerController> ();
-		GameController.Instance.GhostList.Add (this);
+		//	player = this.GetComponent<PlayerController> ();
+		//	GameController.Instance.GhostList.Add (this);
 	}
 	// Use this for initialization
 	void Start ()
 	{
-	
+		player = this.GetComponent<PlayerController> ();
+		GameController.Instance.GhostList.Add (this);
 	}
 	
 	// Update is called once per frame
