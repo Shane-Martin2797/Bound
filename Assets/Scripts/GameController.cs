@@ -14,7 +14,7 @@ public class GameController : SingletonBehaviour<GameController>
 	
 	protected override void OnSingletonAwake ()
 	{
-		
+		Application.LoadLevelAdditive(Scenes.HUD);
 	}
 	
 	void Start ()
@@ -41,6 +41,11 @@ public class GameController : SingletonBehaviour<GameController>
 		timer -= Time.deltaTime;
 		if (OnTimeChange != null) {
 			OnTimeChange (timer);
+		}
+
+		if(timer < 0)
+		{
+			GameOver(0);
 		}
 	}
 	
