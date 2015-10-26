@@ -16,7 +16,7 @@ public class PushControl : MonoBehaviour
 
 	
 	
-	void Awake ()
+	void Start ()
 	{
 		player = this.GetComponent<PlayerController> ();
 		GameController.Instance.HumanList.Add (this);
