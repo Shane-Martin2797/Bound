@@ -5,13 +5,14 @@ public class GhostControl : MonoBehaviour
 {
 	public PlayerController player;
 	public PlayerController heldPlayer;
+	public LayerMask layers;
 	
 	private bool grabbed = false;
 	private bool inWall = false;
 	private bool moveTowardTeam = false;
 	
 	private float timer;
-	private float defaultTimer = .2f;
+	private float defaultTimer = .25f;
 	private float holdTimer = 3;
 	private float holdTimerDefault = 3;
 	
@@ -33,15 +34,18 @@ public class GhostControl : MonoBehaviour
 		} else if (touchedPlayer != null) {
 			if (touchedGhost == null) {
 				//This line makes it so you can't grab your teammate, It is gone now, due to the mechanic we want in our game...
-				//if (touchedPlayer.team != player.team) {
 				if (grabDelay < 0) {
 					touchedPlayer.canMove = false;
 					heldPlayer = touchedPlayer;
-					GrabbedPlayer ();
 					grabbed = true;
+					
+					if (touchedPlayer.team != player.team) {
+						GrabbedPlayerE ();
+					} else {
+						GrabbedPlayerT ();
+					}
 					holdTimer = holdTimerDefault;
 				}
-				//}
 			}
 		}
 	}
@@ -55,7 +59,7 @@ public class GhostControl : MonoBehaviour
 		timer = defaultTimer;
 	}
 	
-	void GrabbedPlayer ()
+	void GrabbedPlayerE ()
 	{
 		if (!stunned) {
 			heldPlayer.transform.parent = this.transform;
@@ -67,6 +71,15 @@ public class GhostControl : MonoBehaviour
 			}
 		}
 	}
+	
+	void GrabbedPlayerT ()
+	{
+		if (!stunned) {
+			heldPlayer.transform.parent = this.transform;
+			heldPlayer.GetComponent<Collider2D> ().enabled = false;
+		}
+	}
+	
 	
 	void LetGoOfPlayer ()
 	{
@@ -140,6 +153,8 @@ public class GhostControl : MonoBehaviour
 		if (moveTowardTeam) {
 			MoveTeam ();
 		}
+		
+		CheckWall ();
 	}
 	
 	public void Stun ()
@@ -187,6 +202,20 @@ public class GhostControl : MonoBehaviour
 			float angle = Mathf.Rad2Deg * Mathf.Atan2 (direction.y, direction.x) - 90;
 			GetComponent<Rigidbody2D> ().MoveRotation (angle);
 			transform.Translate (Vector3.forward * player.movementSpeed * Time.deltaTime);
+		}
+	}
+	
+	void CheckWall ()
+	{
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.forward, 1, layers.value);
+		Debug.DrawRay (transform.position, transform.forward, Color.blue);
+		if (hit != null) {
+			if (hit.collider != null) {
+				GhostWall wall = hit.collider.GetComponent<GhostWall> ();
+				if (wall == null) {
+					LeftWall ();
+				}
+			}
 		}
 	}
 }

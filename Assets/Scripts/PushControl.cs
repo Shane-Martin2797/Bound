@@ -92,15 +92,21 @@ public class PushControl : MonoBehaviour
 						RaycastHit2D hit = Physics2D.Raycast (transform.position + transform.up, directionToPlayer, visionDistance, collidersHit.value);
 						if (hit != null) {
 							if (ghost != null) {
-								if (hit.collider.gameObject == ghost.gameObject) {
-									if (hit.collider.gameObject.GetComponent<PlayerController> ().team != player.team) {
-										ghost.Stun ();
+								if (hit.collider != null) {
+									if (hit.collider.gameObject == ghost.gameObject) {
+										if (hit.collider.gameObject.GetComponent<PlayerController> () != null) {
+											if (hit.collider.gameObject.GetComponent<PlayerController> ().team != player.team) {
+												if (hit.collider != null) {
+													ghost.Stun ();
+												}
+											}
+										}
 									}
 								}
 							}
 						}
-					}
 				
+					}
 				}
 			}
 		}
