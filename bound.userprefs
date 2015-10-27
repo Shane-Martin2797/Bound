@@ -1,17 +1,8 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GhostControl.cs">
-    <Files>
-      <File FileName="Assets\Scripts\GhostControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\Title\TitleManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GhostControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\PushControl.cs" Line="108" Column="2" />
-      <File FileName="Assets\Scripts\UI\Title\TitleManager.cs" Line="21" Column="4" />
->>>>>>> f5d6c3b052ac2c293cd5fab4d7dbca7c4b86b4e3
+      <File FileName="Assets/Scripts/GhostControl.cs" Line="14" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

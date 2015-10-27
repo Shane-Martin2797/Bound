@@ -11,7 +11,7 @@ public class GhostControl : MonoBehaviour
 	private bool moveTowardTeam = false;
 	
 	private float timer;
-	private float defaultTimer = .25f;
+	private float defaultTimer = .2f;
 	private float holdTimer = 3;
 	private float holdTimerDefault = 3;
 	
@@ -28,19 +28,20 @@ public class GhostControl : MonoBehaviour
 	{
 		PlayerController touchedPlayer = col.gameObject.GetComponent<PlayerController> ();
 		GhostControl touchedGhost = col.gameObject.GetComponent<GhostControl> ();
-		if (col.gameObject.GetComponent<WallController> () != null) {
+		if (col.gameObject.GetComponent<GhostWall> () != null) {
 			TouchedWall ();
 		} else if (touchedPlayer != null) {
 			if (touchedGhost == null) {
-				if (touchedPlayer.team != player.team) {
-					if (grabDelay < 0) {
-						touchedPlayer.canMove = false;
-						heldPlayer = touchedPlayer;
-						GrabbedPlayer ();
-						grabbed = true;
-						holdTimer = holdTimerDefault;
-					}
+				//This line makes it so you can't grab your teammate, It is gone now, due to the mechanic we want in our game...
+				//if (touchedPlayer.team != player.team) {
+				if (grabDelay < 0) {
+					touchedPlayer.canMove = false;
+					heldPlayer = touchedPlayer;
+					GrabbedPlayer ();
+					grabbed = true;
+					holdTimer = holdTimerDefault;
 				}
+				//}
 			}
 		}
 	}

@@ -5,8 +5,8 @@ public class PushControl : MonoBehaviour
 {
 	public PlayerController player;
 	
-	private WallController heldWall;
-	public WallController targetedWall;
+	private PushWallController heldWall;
+	public PushWallController targetedWall;
 	public float grabDist = 1;
 	public float moveModifier = .7f;
 	
@@ -52,7 +52,7 @@ public class PushControl : MonoBehaviour
 		Debug.DrawRay (transform.position, transform.forward, Color.blue);
 		if (hit != null) {
 			if (hit.collider != null) {
-				WallController wall = hit.collider.GetComponent<WallController> ();
+				PushWallController wall = hit.collider.GetComponent<PushWallController> ();
 				if (targetedWall != null) {
 					if (wall == targetedWall) {
 						return true;
@@ -88,7 +88,7 @@ public class PushControl : MonoBehaviour
 				if (dot > cone) {
 					float distance = Vector3.Distance (transform.position, ghost.transform.position);
 					if (distance < visionDistance) {
-						Physics2D.raycastsHitTriggers = false;
+						Physics2D.queriesHitTriggers = false;
 						RaycastHit2D hit = Physics2D.Raycast (transform.position + transform.up, directionToPlayer, visionDistance, collidersHit.value);
 						if (hit != null) {
 							if (ghost != null) {
