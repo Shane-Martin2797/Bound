@@ -158,6 +158,7 @@
      <Compile Include="Assets\Prefabs\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\AudioController.cs" />
      <Compile Include="Assets\Scripts\BGMController.cs" />
+     <Compile Include="Assets\Scripts\DynamicCamera.cs" />
      <Compile Include="Assets\Scripts\EndZone.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GhostControl.cs" />
