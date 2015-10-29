@@ -7,34 +7,21 @@ public class GameController : SingletonBehaviour<GameController>
 	public static event System.Action<float> OnTimeChange;
 	public List<GhostControl> GhostList = new List<GhostControl> ();
 	public List<PushControl> HumanList = new List<PushControl> ();
-	public int[] Teams = new int[10];
+	public int team1Score = 0;
+	public int team2Score = 0;
+	public int scoreLimit = 10;
 	public float timer = 120;
+	bool musicChanged = false;
 	
 	public static int winTeam;
 	
 	protected override void OnSingletonAwake ()
 	{
-		Application.LoadLevelAdditive(Scenes.HUD);
+		Application.LoadLevelAdditive (Scenes.HUD);
 	}
 	
 	void Start ()
 	{
-		SortTeams ();
-	}
-	void SortTeams ()
-	{
-		if (GameController.Instance.GhostList.Count > 0) {
-			for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {
-				Teams [GameController.Instance.GhostList [i].player.team] += 1;
-			}
-		}
-		if (GameController.Instance.HumanList.Count > 0) {
-			for (int i = 0; i < GameController.Instance.HumanList.Count; ++i) {
-				Teams [GameController.Instance.HumanList [i].player.team] += 1;
-			}
-		}
-		
-		
 	}
 	void Update ()
 	{
@@ -42,19 +29,25 @@ public class GameController : SingletonBehaviour<GameController>
 		if (OnTimeChange != null) {
 			OnTimeChange (timer);
 		}
-
-		if(timer < 0)
-		{
-			GameOver(0);
+		
+		if (timer < 20) {
+			if (!musicChanged) {
+				BGMController.Instance.ChangeMusic (1);
+				musicChanged = true;
+			}
+		}
+		
+		if (timer < 0) {
+			GameOver (0);
 		}
 	}
 	
 	public void GameOver (int teamNumber)
 	{
-		winTeam = teamNumber;
 		int wins = PlayerPrefs.GetInt ("Team" + teamNumber, 0);
 		wins++;
 		PlayerPrefs.SetInt ("Team" + teamNumber, wins);
+		winTeam = teamNumber;
 		Application.LoadLevel (Scenes.EndScreen);
 	}
 }

@@ -3,6 +3,11 @@ using System.Collections;
 
 public class GhostControl : MonoBehaviour
 {
+
+
+	public AudioClip grabSound;
+	
+	
 	public PlayerController player;
 	public PlayerController heldPlayer;
 	public LayerMask layers;
@@ -13,8 +18,8 @@ public class GhostControl : MonoBehaviour
 	
 	private float timer;
 	private float defaultTimer = .25f;
-	private float holdTimer = 3;
-	private float holdTimerDefault = 3;
+	private float holdTimer = 25f;
+	private float holdTimerDefault = 25f;
 	
 	private bool stunned;
 	private float stunTimer;
@@ -23,7 +28,7 @@ public class GhostControl : MonoBehaviour
 	private float stunDelayDefault = 3;
 	
 	private float grabDelay;
-	private float grabDelayDefault = 2;
+	private float grabDelayDefault = 5;
 	
 	void OnCollisionEnter2D (Collision2D col)
 	{
@@ -33,8 +38,8 @@ public class GhostControl : MonoBehaviour
 			TouchedWall ();
 		} else if (touchedPlayer != null) {
 			if (touchedGhost == null) {
-				//This line makes it so you can't grab your teammate, It is gone now, due to the mechanic we want in our game...
 				if (grabDelay < 0) {
+					AudioController.Instance.PlayAudioOneShot (grabSound);
 					touchedPlayer.canMove = false;
 					heldPlayer = touchedPlayer;
 					grabbed = true;
@@ -64,6 +69,7 @@ public class GhostControl : MonoBehaviour
 		if (!stunned) {
 			heldPlayer.transform.parent = this.transform;
 			heldPlayer.GetComponent<Collider2D> ().enabled = false;
+			heldPlayer.canMove = false;
 			for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {
 				if (GameController.Instance.GhostList [i] != this) {
 					GameController.Instance.GhostList [i].MoveTowardsTeammate ();
@@ -77,6 +83,7 @@ public class GhostControl : MonoBehaviour
 		if (!stunned) {
 			heldPlayer.transform.parent = this.transform;
 			heldPlayer.GetComponent<Collider2D> ().enabled = false;
+			heldPlayer.canMove = false;
 		}
 	}
 	

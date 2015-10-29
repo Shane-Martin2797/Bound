@@ -1,11 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndZone.cs">
     <Files>
-      <File FileName="Assets/Scripts/PushControl.cs" Line="114" Column="2" />
-      <File FileName="Assets/Scripts/GhostControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GhostControl.cs" Line="22" Column="35" />
+      <File FileName="Assets/Scripts/PushControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AudioController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EndZone.cs" Line="47" Column="41" />
+      <File FileName="Assets/Scripts/BGMController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/Title/TitleManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PushWallController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EndZone.cs" Line="13" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

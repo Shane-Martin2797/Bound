@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-
+	public LineRenderer lineRenderer;
 	
 	//We're going to have multiple input devices (one per player). This keeps track of which input devices are in us by players
 	private static List<InControl.InputDevice> activeDevices = new List<InControl.InputDevice> ();
@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
 		if (collidedPlayer != null) {
 			if (collidedPlayer.team == this.team) {
 				collidedPlayer.SpeedUp ();
+				if (lineRenderer != null) {
+					AddLine ();
+				}
 			}
 		}
 	}
@@ -29,6 +32,9 @@ public class PlayerController : MonoBehaviour
 		if (collidedPlayer != null) {
 			if (collidedPlayer.team == this.team) {
 				collidedPlayer.SlowDown ();
+				if (lineRenderer != null) {
+					RemoveLine ();
+				}
 			}
 		}
 	}
@@ -52,6 +58,7 @@ public class PlayerController : MonoBehaviour
 	{
 		defaultMovmentSpeed = movementSpeed;
 		closeMovementSpeed = movementSpeed * 1.5f;
+		lineRenderer = this.GetComponent<LineRenderer> ();
 	}
 	
 	// Update is called once per frame
@@ -62,6 +69,26 @@ public class PlayerController : MonoBehaviour
 		} else {
 			if (inputDevice.LeftStickX.Value != 0 || inputDevice.LeftStickY.Value != 0) {
 				Movement ();
+			}
+		}
+		
+		if (lineRenderer != null) {
+			if (lineRenderer.enabled) {
+				lineRenderer.SetPosition (0, transform.position);
+				if (this.GetComponent<PushControl> () != null) {
+					for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {
+						if (GameController.Instance.GhostList [i].player.team == this.team) {
+							lineRenderer.SetPosition (1, GameController.Instance.GhostList [i].transform.position);
+						}
+					}
+				} else if (this.GetComponent<GhostControl> () != null) {
+					for (int i = 0; i < GameController.Instance.HumanList.Count; ++i) {
+						if (GameController.Instance.HumanList [i].player.team == this.team) {
+							lineRenderer.SetPosition (1, GameController.Instance.HumanList [i].transform.position);
+						}
+					}
+				}
+				
 			}
 		}
 	}
@@ -99,4 +126,17 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
+	void AddLine ()
+	{
+		if (lineRenderer != null) {
+			lineRenderer.enabled = true;
+			lineRenderer.SetVertexCount (2);
+		}
+	}
+	void RemoveLine ()
+	{
+		if (lineRenderer != null) {
+			lineRenderer.enabled = false;
+		}
+	}
 }

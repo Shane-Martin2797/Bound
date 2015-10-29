@@ -5,7 +5,9 @@ public class PushControl : MonoBehaviour
 {
 	public PlayerController player;
 	
-	private PushWallController heldWall;
+	public AudioClip footstepSound;
+	
+	public PushWallController heldWall;
 	public PushWallController targetedWall;
 	public float grabDist = 1;
 	public float moveModifier = .7f;
@@ -25,7 +27,7 @@ public class PushControl : MonoBehaviour
 	void Update ()
 	{
 		if (player.inputDevice != null) {
-			if (player.inputDevice.Action1.IsPressed) {
+			if (player.inputDevice.Action1.WasPressed) {
 				HoldWall ();
 			}
 		}
@@ -66,13 +68,19 @@ public class PushControl : MonoBehaviour
 	void HoldWall ()
 	{
 		if (heldWall != null) {
-			heldWall = null;
-			player.canMove = true;
+			DropWall ();
 		} else if (targetedWall != null && CheckWall ()) {
 			heldWall = targetedWall;
 			player.canMove = false;
 		}
 	}
+	
+	public void DropWall ()
+	{
+		heldWall = null;
+		player.canMove = true;
+	}
+	
 	void SearchForEnemyGhost ()
 	{
 		for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {

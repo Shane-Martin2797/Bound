@@ -35,10 +35,8 @@ public class TitleManager : MonoBehaviour
 		} else {
 			Debug.Log ("Input 4 Found");
 		}
-		if (inputDevice1 != null && inputDevice2 != null && inputDevice3 != null && inputDevice4 != null) {
-			if (inputDevice1.Action1.WasPressed && inputDevice2.Action1.WasPressed && inputDevice3.Action1.WasPressed && inputDevice4.Action1.WasPressed) {
-				StartGame ();
-			}
+		if (InControl.InputManager.ActiveDevice.Action1.WasPressed) {
+			StartGame ();
 		}
 	}
 
