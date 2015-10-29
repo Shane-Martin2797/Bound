@@ -18,8 +18,9 @@ public class GhostControl : MonoBehaviour
 	
 	private float timer;
 	private float defaultTimer = .25f;
-	private float holdTimer = 25f;
-	private float holdTimerDefault = 25f;
+	
+	private float holdTimer = .25f;
+	private float holdTimerDefault = .25f;
 	
 	private bool stunned;
 	private float stunTimer;

@@ -37,8 +37,15 @@ public class GameController : SingletonBehaviour<GameController>
 			}
 		}
 		
+		
+		//This means that when the timer is at 0, the player will win if they are ahead of the other team, however if they are tied
+		//The game will continue until one of the them scores.
 		if (timer < 0) {
-			GameOver (0);
+			if (team1Score > team2Score) {
+				GameOver (1);
+			} else if (team1Score < team2Score) {
+				GameOver (2);
+			}
 		}
 	}
 	
