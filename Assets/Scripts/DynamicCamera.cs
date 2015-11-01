@@ -9,8 +9,10 @@ public class DynamicCamera : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		FollowGameObjects ();
-		AdjustCameraSize ();
+		if (gameObjectsToFollow.Count > 0) {
+			FollowGameObjects ();
+			AdjustCameraSize ();
+		}
 	}
 	
 	void FollowGameObjects ()

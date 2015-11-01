@@ -57,8 +57,8 @@
      <Compile Include="Assets\InControl\Editor\ReorderableList\ReorderableListFlags.cs" />
      <Compile Include="Assets\InControl\Editor\ReorderableList\ReorderableListGUI.cs" />
      <Compile Include="Assets\InControl\Editor\ReorderableList\SerializedPropertyAdaptor.cs" />
-     <None Include="Assets\Prefabs\Medieval_House 1\Info.txt" />
-     <None Include="Assets\Prefabs\Medieval_House\Info.txt" />
+     <None Include="Assets\Prefabs\Old\Medieval_House 1\Info.txt" />
+     <None Include="Assets\Prefabs\Old\Medieval_House\Info.txt" />
      <None Include="Assets\InControl\README\README.txt" />
      <None Include="Assets\Art\Skyboxes\_skybox info.txt" />
  <Reference Include="Assembly-UnityScript">

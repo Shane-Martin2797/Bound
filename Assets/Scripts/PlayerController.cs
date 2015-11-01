@@ -4,61 +4,31 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-	public LineRenderer lineRenderer;
+	
+	[System.Serializable]
+	public class SpellBook
+	{
+		public Spell LBSpell;
+		public Spell RBSpell;
+		public Spell RTSpell;
+		public Spell LTSpell;
+	}
 	
 	//We're going to have multiple input devices (one per player). This keeps track of which input devices are in us by players
 	private static List<InControl.InputDevice> activeDevices = new List<InControl.InputDevice> ();
 	public InControl.InputDevice inputDevice { get; private set; }
 	public bool hasInputDevice { get { return inputDevice != null; } }
 	
-	private float defaultMovmentSpeed = 10;
-	private float closeMovementSpeed = 15;
 	
-	void OnTriggerEnter2D (Collider2D col)
-	{
-		PlayerController collidedPlayer = col.GetComponent<PlayerController> ();
-		if (collidedPlayer != null) {
-			if (collidedPlayer.team == this.team) {
-				collidedPlayer.SpeedUp ();
-				if (lineRenderer != null) {
-					AddLine ();
-				}
-			}
-		}
-	}
-	void OnTriggerExit2D (Collider2D col)
-	{
-		PlayerController collidedPlayer = col.GetComponent<PlayerController> ();
-		if (collidedPlayer != null) {
-			if (collidedPlayer.team == this.team) {
-				collidedPlayer.SlowDown ();
-				if (lineRenderer != null) {
-					RemoveLine ();
-				}
-			}
-		}
-	}
+	public SpellBook spellBook;
 	
-	public void SpeedUp ()
-	{
-		movementSpeed = closeMovementSpeed;
-	}
-	public void SlowDown ()
-	{
-		movementSpeed = defaultMovmentSpeed;
-	}
+	private float movementSpeed = 10;
+	public float health = 120;
+	private float maxHealth = 120;
 	
-	public float movementSpeed = 10f;
-	public int team = 1;
-	public bool canMove = true;
-	
-
-	// Use this for initialization
 	void Awake ()
 	{
-		defaultMovmentSpeed = movementSpeed;
-		closeMovementSpeed = movementSpeed * 1.5f;
-		lineRenderer = this.GetComponent<LineRenderer> ();
+		health = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -70,36 +40,105 @@ public class PlayerController : MonoBehaviour
 			if (inputDevice.LeftStickX.Value != 0 || inputDevice.LeftStickY.Value != 0) {
 				Movement ();
 			}
+			if (inputDevice.RightStickX.Value != 0 || inputDevice.RightStickY.Value != 0) {
+				Rotation ();
+			}
+			Inputs ();
 		}
-		
-		if (lineRenderer != null) {
-			if (lineRenderer.enabled) {
-				lineRenderer.SetPosition (0, transform.position);
-				if (this.GetComponent<PushControl> () != null) {
-					for (int i = 0; i < GameController.Instance.GhostList.Count; ++i) {
-						if (GameController.Instance.GhostList [i].player.team == this.team) {
-							lineRenderer.SetPosition (1, GameController.Instance.GhostList [i].transform.position);
-						}
-					}
-				} else if (this.GetComponent<GhostControl> () != null) {
-					for (int i = 0; i < GameController.Instance.HumanList.Count; ++i) {
-						if (GameController.Instance.HumanList [i].player.team == this.team) {
-							lineRenderer.SetPosition (1, GameController.Instance.HumanList [i].transform.position);
-						}
-					}
+	}
+	
+	void Inputs ()
+	{
+		//Left Bumper
+		{
+			if (spellBook.LBSpell != null) {
+				if (inputDevice.LeftBumper.IsPressed) {
+					spellBook.LBSpell.PressCast ();
 				}
-				
+				if (inputDevice.LeftBumper.WasPressed) {
+					spellBook.LBSpell.HoldCast ();
+				}
+				if (inputDevice.LeftBumper.WasReleased) {
+					spellBook.LBSpell.ReleaseCast ();
+				}
+			}
+		}
+		//Right Bumper
+		{
+			if (spellBook.RBSpell != null) {
+				if (inputDevice.RightBumper.IsPressed) {
+					spellBook.RBSpell.PressCast ();
+				}
+				if (inputDevice.RightBumper.WasPressed) {
+					spellBook.RBSpell.HoldCast ();
+				}
+				if (inputDevice.RightBumper.WasReleased) {
+					spellBook.RBSpell.ReleaseCast ();
+				}
+			}
+		}
+		//Left Trigger
+		{
+			if (spellBook.LTSpell != null) {
+				if (inputDevice.LeftTrigger.IsPressed) {
+					spellBook.LTSpell.PressCast ();
+				}
+				if (inputDevice.LeftTrigger.WasPressed) {
+					spellBook.LTSpell.HoldCast ();
+				}
+				if (inputDevice.LeftTrigger.WasReleased) {
+					spellBook.LTSpell.ReleaseCast ();
+				}
+			}
+		}
+		//Right Trigger
+		{
+			if (spellBook.RTSpell != null) {
+				if (inputDevice.RightTrigger.IsPressed) {
+					spellBook.RTSpell.PressCast ();
+				}
+				if (inputDevice.RightTrigger.WasPressed) {
+					spellBook.RTSpell.HoldCast ();
+				}
+				if (inputDevice.RightTrigger.WasReleased) {
+					spellBook.RTSpell.ReleaseCast ();
+				}
 			}
 		}
 	}
 	
 	void Movement ()
 	{
-		if (canMove) {
-			float angle = Mathf.Rad2Deg * Mathf.Atan2 (inputDevice.LeftStickY.Value, inputDevice.LeftStickX.Value) - 90;
-			GetComponent<Rigidbody2D> ().MoveRotation (angle);
-			transform.Translate (Vector3.forward * movementSpeed * Time.deltaTime);
+		Vector3 pos = transform.position;
+		Vector3 movementDirection = new Vector3 (inputDevice.LeftStickX.Value, inputDevice.LeftStickY.Value, 0) * movementSpeed * Time.deltaTime;
+		pos += movementDirection;
+		transform.position = pos;
+	}
+	
+	void Rotation ()
+	{
+		float angle = Mathf.Rad2Deg * Mathf.Atan2 (inputDevice.RightStickY.Value, inputDevice.RightStickX.Value) - 90;
+		GetComponent<Rigidbody2D> ().MoveRotation (angle);
+	}
+	
+	public void DamagePlayer (float amount)
+	{
+		health -= amount;
+		if (health < 0) {
+			PlayerDied ();
 		}
+	}
+	public void HealPlayer (float amount)
+	{
+		health += amount;
+		if (health > maxHealth) {
+			health = maxHealth;
+		}
+	}
+	
+	void PlayerDied ()
+	{
+		Destroy (this.gameObject);
 	}
 	
 	void OnDestroy ()
@@ -126,17 +165,4 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
-	void AddLine ()
-	{
-		if (lineRenderer != null) {
-			lineRenderer.enabled = true;
-			lineRenderer.SetVertexCount (2);
-		}
-	}
-	void RemoveLine ()
-	{
-		if (lineRenderer != null) {
-			lineRenderer.enabled = false;
-		}
-	}
 }
