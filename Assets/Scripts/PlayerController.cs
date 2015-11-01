@@ -52,10 +52,10 @@ public class PlayerController : MonoBehaviour
 		//Left Bumper
 		{
 			if (spellBook.LBSpell != null) {
-				if (inputDevice.LeftBumper.IsPressed) {
+				if (inputDevice.LeftBumper.WasPressed) {
 					spellBook.LBSpell.PressCast ();
 				}
-				if (inputDevice.LeftBumper.WasPressed) {
+				if (inputDevice.LeftBumper.IsPressed) {
 					spellBook.LBSpell.HoldCast ();
 				}
 				if (inputDevice.LeftBumper.WasReleased) {
@@ -66,10 +66,10 @@ public class PlayerController : MonoBehaviour
 		//Right Bumper
 		{
 			if (spellBook.RBSpell != null) {
-				if (inputDevice.RightBumper.IsPressed) {
+				if (inputDevice.RightBumper.WasPressed) {
 					spellBook.RBSpell.PressCast ();
 				}
-				if (inputDevice.RightBumper.WasPressed) {
+				if (inputDevice.RightBumper.IsPressed) {
 					spellBook.RBSpell.HoldCast ();
 				}
 				if (inputDevice.RightBumper.WasReleased) {
@@ -80,11 +80,13 @@ public class PlayerController : MonoBehaviour
 		//Left Trigger
 		{
 			if (spellBook.LTSpell != null) {
-				if (inputDevice.LeftTrigger.IsPressed) {
-					spellBook.LTSpell.PressCast ();
-				}
 				if (inputDevice.LeftTrigger.WasPressed) {
+					spellBook.LTSpell.PressCast ();
+					
+				}
+				if (inputDevice.LeftTrigger.IsPressed) {
 					spellBook.LTSpell.HoldCast ();
+					
 				}
 				if (inputDevice.LeftTrigger.WasReleased) {
 					spellBook.LTSpell.ReleaseCast ();
@@ -94,10 +96,10 @@ public class PlayerController : MonoBehaviour
 		//Right Trigger
 		{
 			if (spellBook.RTSpell != null) {
-				if (inputDevice.RightTrigger.IsPressed) {
+				if (inputDevice.RightTrigger.WasPressed) {
 					spellBook.RTSpell.PressCast ();
 				}
-				if (inputDevice.RightTrigger.WasPressed) {
+				if (inputDevice.RightTrigger.IsPressed) {
 					spellBook.RTSpell.HoldCast ();
 				}
 				if (inputDevice.RightTrigger.WasReleased) {

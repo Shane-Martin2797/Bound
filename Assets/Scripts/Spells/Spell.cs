@@ -3,7 +3,8 @@ using System.Collections;
 
 public abstract class Spell : MonoBehaviour
 {
-
+	public float CastTimeModifier = 1f;
+		
 	void Awake ()
 	{
 		OnSpellAwake ();

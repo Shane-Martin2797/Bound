@@ -5,8 +5,6 @@ Project("{B9F2B582-EE75-A725-9C62-CE162CEBE368}") = "bound", "Assembly-CSharp.cs
 EndProject
 Project("{B9F2B582-EE75-A725-9C62-CE162CEBE368}") = "bound", "Assembly-CSharp-Editor.csproj", "{F96CF859-1042-B89F-AEBB-FF12AEFD168D}"
 EndProject
-Project("{B9F2B582-EE75-A725-9C62-CE162CEBE368}") = "bound", "Assembly-UnityScript.unityproj", "{9AE49E85-D631-CE6A-99E2-B46F7F65AF3C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,16 +19,11 @@ Global
 		{F96CF859-1042-B89F-AEBB-FF12AEFD168D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F96CF859-1042-B89F-AEBB-FF12AEFD168D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F96CF859-1042-B89F-AEBB-FF12AEFD168D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AE49E85-D631-CE6A-99E2-B46F7F65AF3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AE49E85-D631-CE6A-99E2-B46F7F65AF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AE49E85-D631-CE6A-99E2-B46F7F65AF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AE49E85-D631-CE6A-99E2-B46F7F65AF3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-																																																																																																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> 4d6f906f02a6c67d094d8f7d2543a863571ff833
