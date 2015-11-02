@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DamageSpellBall : CollisionTriggerBehaviour
+public class BallSpell : CollisionTriggerBehaviour
 {
 	public float damage = 20;
 	float lifetime = 5f;
@@ -13,6 +13,10 @@ public class DamageSpellBall : CollisionTriggerBehaviour
 		if (lifetime < 0) {
 			CleanUp ();
 		}
+	}
+	public void SetDamage (float amount)
+	{
+		damage = amount;
 	}
 	public override void NotifyEnter (GameObject gameObj)
 	{
