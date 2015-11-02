@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
-{
-	
+{	
 	[System.Serializable]
 	public class SpellBook
 	{
@@ -21,10 +20,13 @@ public class PlayerController : MonoBehaviour
 	
 	
 	public SpellBook spellBook;
-	
+	public int team = 0;
+	public float dashDistance = 10;
+	public LayerMask layers;
+	public Transform respawnPoint;
 	private float movementSpeed = 10;
 	public float health = 120;
-	private float maxHealth = 120;
+	public float maxHealth = 120;
 	public float castTime = 0;
 	
 	void Awake ()
@@ -136,9 +138,39 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
+	
+	public Vector3 dashTargetPosition;
+	public void DashSetup ()
+	{
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up, dashDistance, layers.value);
+		if (hit != null) {
+			if (hit.collider != null) {
+				dashTargetPosition = hit.collider.bounds.ClosestPoint (transform.position);
+			} else {
+				dashTargetPosition = (transform.position + (transform.up * dashDistance));
+			}
+		} else {
+			dashTargetPosition = (transform.position + (transform.up * dashDistance));
+		}
+		Dash ();
+	}
+	
+	void Dash ()
+	{
+		transform.position = dashTargetPosition;
+	}
+	
+	
 	void PlayerDied ()
 	{
-		Destroy (this.gameObject);
+		if (team == 1) {
+			GameController.Instance.Team1LosesLife ();
+		} else if (team == 2) {
+			GameController.Instance.Team2LosesLife ();
+		} else {
+			Debug.LogWarning ("No Team Set");
+		}
+		transform.position = respawnPoint.position;
 	}
 	
 	void OnDestroy ()

@@ -5,8 +5,10 @@ using System.Collections.Generic;
 public class GameController : SingletonBehaviour<GameController>
 {
 	public static event System.Action<float> OnTimeChange;
-	public int team1Score = 0;
-	public int team2Score = 0;
+	public static event System.Action<int> OnTeam1LiveChange;
+	public static event System.Action<int> OnTeam2LiveChange;
+	public int team1Lives = 6;
+	public int team2Lives = 6;
 	public int scoreLimit = 100;
 	
 	public static int winTeam;
@@ -16,12 +18,19 @@ public class GameController : SingletonBehaviour<GameController>
 		Application.LoadLevelAdditive (Scenes.HUD);
 	}
 	
-	void Start ()
+	public void Team1LosesLife ()
 	{
+		team1Lives--;
+		if (OnTeam1LiveChange != null) {
+			OnTeam1LiveChange (team1Lives);
+		}
 	}
-	void Update ()
+	public void Team2LosesLife ()
 	{
-		
+		team2Lives--;
+		if (OnTeam2LiveChange != null) {
+			OnTeam2LiveChange (team2Lives);
+		}
 	}
 	
 	public void GameOver (int teamNumber)
