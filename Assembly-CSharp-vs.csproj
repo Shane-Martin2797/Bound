@@ -165,6 +165,7 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SingletonBehaviour.cs" />
      <Compile Include="Assets\Scripts\Spells\DamageSpell.cs" />
+     <Compile Include="Assets\Scripts\Spells\DashSpell.cs" />
      <Compile Include="Assets\Scripts\Spells\Spell.cs" />
      <Compile Include="Assets\Scripts\Spells\SpellExtras\BallSpell.cs" />
      <Compile Include="Assets\Scripts\UI\End\EndScore.cs" />
