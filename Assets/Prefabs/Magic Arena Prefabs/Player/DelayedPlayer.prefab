@@ -60,7 +60,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 463120}
-  - 114: {fileID: 11415064}
+  - 114: {fileID: 11481108}
   m_Layer: 9
   m_Name: Heal
   m_TagString: Untagged
@@ -76,7 +76,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422934}
-  - 114: {fileID: 11408070}
+  - 114: {fileID: 11418990}
   m_Layer: 9
   m_Name: Dash
   m_TagString: Untagged
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475622}
-  - 114: {fileID: 11428360}
+  - 114: {fileID: 11490656}
   m_Layer: 9
   m_Name: Damage
   m_TagString: Untagged
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .131999999, z: 0}
+  m_LocalPosition: {x: 0, y: .218999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 499930}
@@ -201,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .131999999, z: 0}
+  m_LocalPosition: {x: 0, y: .218999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 499930}
@@ -227,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0999999, y: -.101328783, z: 0}
+  m_LocalPosition: {x: -3.0999999, y: 2.9000001, z: -1}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 475622}
@@ -246,7 +246,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 52af3d984bab64e5f94f2aa302948b04, type: 2}
+  - {fileID: 2100000, guid: 917e608286bede54d97e74b0cf885e95, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -270,7 +270,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5f830f7d858694f9faed809fd4800daa, type: 2}
+  - {fileID: 2100000, guid: e1c1b82334aa51f45b53b74837d915de, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -351,7 +351,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11408070
+--- !u!114 &11418990
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 143398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53fad94f7aabd4733a3cee013ae0ac14, type: 3}
+  m_Script: {fileID: 11500000, guid: f89b98e9825a446469a942a7ae2b2037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CastTimeModifier: 1
@@ -369,49 +369,7 @@ MonoBehaviour:
   onCooldown: 0
   cooldownTime: 5
   cooldownTimer: 0
-  distance: 20
---- !u!114 &11415064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4a205824e594127a28f8e2129199e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CastTimeModifier: 1
-  castTime: 0
-  canCast: 0
-  player: {fileID: 0}
-  onCooldown: 0
-  cooldownTime: 0
-  cooldownTimer: 0
-  damageBall: {fileID: 11432632, guid: f8c37556c2c8947098beba86868535d5, type: 2}
-  spawnPoint: {fileID: 463120}
-  damage: -20
---- !u!114 &11428360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4a205824e594127a28f8e2129199e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CastTimeModifier: 1
-  castTime: 0
-  canCast: 0
-  player: {fileID: 0}
-  onCooldown: 0
-  cooldownTime: 0
-  cooldownTimer: 0
-  damageBall: {fileID: 11452714, guid: 1997037a09b7748f19b3173a0fffdbd2, type: 2}
-  spawnPoint: {fileID: 475622}
-  damage: 20
+  distance: 10
 --- !u!114 &11470644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,10 +382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellBook:
-    LBSpell: {fileID: 11408070}
-    RBSpell: {fileID: 11408070}
-    RTSpell: {fileID: 11428360}
-    LTSpell: {fileID: 11415064}
+    LBSpell: {fileID: 11418990}
+    RBSpell: {fileID: 11418990}
+    RTSpell: {fileID: 11490656}
+    LTSpell: {fileID: 11481108}
   team: 1
   dashDistance: 10
   layers:
@@ -439,6 +397,48 @@ MonoBehaviour:
   castTime: .5
   healthBar: {fileID: 174746}
   dashTargetPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &11481108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c020ffd796e3447a8048c77bb1bd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CastTimeModifier: 1
+  castTime: 0
+  canCast: 0
+  player: {fileID: 0}
+  onCooldown: 0
+  cooldownTime: .5
+  cooldownTimer: 0
+  damageBall: {fileID: 11476992, guid: 7e490a3b5e56cb44486376cc87a648a5, type: 2}
+  spawnPoint: {fileID: 463120}
+  damage: -20
+--- !u!114 &11490656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c020ffd796e3447a8048c77bb1bd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CastTimeModifier: 1
+  castTime: 0
+  canCast: 0
+  player: {fileID: 0}
+  onCooldown: 0
+  cooldownTime: .5
+  cooldownTimer: 0
+  damageBall: {fileID: 11436900, guid: 0ce2083e674e953479300a1e35f9e83e, type: 2}
+  spawnPoint: {fileID: 475622}
+  damage: 25
 --- !u!212 &21273508
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -464,7 +464,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: .933823526, g: .624837816, b: .624837816, a: 1}
+  m_Color: {r: 1, g: .8482759, b: 0, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

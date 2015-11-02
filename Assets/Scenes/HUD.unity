@@ -278,6 +278,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .41911763, g: 1, b: .975963712, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b1d24f78c05487847a325a909754a73c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -405,7 +411,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 931900184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25751fd6ea7d01a4fb076f226b30d79e, type: 3}
+  m_Script: {fileID: 11500000, guid: 61e350b1cf7c4134bad1633edcb26232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 931900186}
@@ -420,7 +426,7 @@ GameObject:
   - 223: {fileID: 1739937229}
   - 114: {fileID: 1739937228}
   - 114: {fileID: 1739937227}
-  - 114: {fileID: 1739937230}
+  - 114: {fileID: 1739937231}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -504,7 +510,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!114 &1739937230
+--- !u!114 &1739937231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -512,7 +518,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1739937225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d6f39eef417410b983bf1928cc45d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d7c768c8bf21ce40a1d2c246692bf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   team1Lives: {fileID: 1975855275}
@@ -636,6 +642,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: .965517223, b: .5, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b1d24f78c05487847a325a909754a73c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
