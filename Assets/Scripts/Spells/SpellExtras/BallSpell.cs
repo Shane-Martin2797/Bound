@@ -3,12 +3,13 @@ using System.Collections;
 
 public class BallSpell : CollisionTriggerBehaviour
 {
-	public float damage = 20;
+	float damage = 20;
 	float lifetime = 5f;
+	public float speed = 5;
 
 	void Update ()
 	{
-		transform.Translate (Vector3.up * Time.deltaTime);
+		transform.Translate (Vector3.up * Time.deltaTime * speed);
 		lifetime -= Time.deltaTime;
 		if (lifetime < 0) {
 			CleanUp ();
