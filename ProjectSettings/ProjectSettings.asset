@@ -92,6 +92,9 @@ PlayerSettings:
   APKExpansionFiles: 0
   preloadShaders: 0
   StripUnusedMeshComponents: 0
+  VertexChannelCompressionMask:
+    serializedVersion: 2
+    m_Bits: 238
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 22
   uIPrerenderedIcon: 0
@@ -189,6 +192,8 @@ PlayerSettings:
   ps4SaveDataImagePath: 
   ps4BGMPath: 
   ps4ShareFilePath: 
+  ps4ShareOverlayImagePath: 
+  ps4PrivacyGuardImagePath: 
   ps4NPtitleDatPath: 
   ps4RemotePlayKeyAssignment: -1
   ps4EnterButtonAssignment: 1
@@ -203,6 +208,15 @@ PlayerSettings:
   ps4pnFriends: 1
   ps4pnGameCustomData: 1
   playerPrefsSupport: 0
+<<<<<<< HEAD
+=======
+  ps4ReprojectionSupport: 0
+  ps4attribUserManagement: 0
+  ps4attribMoveSupport: 0
+  ps4attrib3DSupport: 0
+  ps4attribShareSupport: 0
+  ps4IncludedModules: []
+>>>>>>> 2124da8940f6fc4ca202cd2d3818adda44982ebf
   monoEnv: 
   psp2Splashimage: {fileID: 0}
   psp2NPTrophyPackPath: 

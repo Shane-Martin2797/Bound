@@ -60,7 +60,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 463120}
-  - 114: {fileID: 11481108}
+  - 114: {fileID: 11487020}
   m_Layer: 9
   m_Name: Heal
   m_TagString: Untagged
@@ -76,7 +76,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422934}
-  - 114: {fileID: 11418990}
+  - 114: {fileID: 11495056}
   m_Layer: 9
   m_Name: Dash
   m_TagString: Untagged
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475622}
-  - 114: {fileID: 11490656}
+  - 114: {fileID: 11461694}
   m_Layer: 9
   m_Name: Damage
   m_TagString: Untagged
@@ -351,15 +351,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11418990
+--- !u!114 &11461694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143398}
+  m_GameObject: {fileID: 150162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f89b98e9825a446469a942a7ae2b2037, type: 3}
+  m_Script: {fileID: 11500000, guid: 08410d5d2559be343ad11b4a753d04f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CastTimeModifier: 1
@@ -367,9 +367,12 @@ MonoBehaviour:
   canCast: 0
   player: {fileID: 0}
   onCooldown: 0
-  cooldownTime: 5
+  cooldownTime: .200000003
   cooldownTimer: 0
-  distance: 10
+  damageBall: {fileID: 0}
+  damageBallAoE: {fileID: 11471564, guid: 4ff1aeeecb1d148338707b2e0b2fe9c3, type: 2}
+  spawnPoint: {fileID: 475622}
+  damage: 25
 --- !u!114 &11470644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,10 +385,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellBook:
-    LBSpell: {fileID: 11418990}
-    RBSpell: {fileID: 11418990}
-    RTSpell: {fileID: 11490656}
-    LTSpell: {fileID: 11481108}
+    LBSpell: {fileID: 11495056}
+    RBSpell: {fileID: 11495056}
+    RTSpell: {fileID: 11461694}
+    LTSpell: {fileID: 11487020}
   team: 1
   dashDistance: 10
   layers:
@@ -397,7 +400,7 @@ MonoBehaviour:
   castTime: .5
   healthBar: {fileID: 174746}
   dashTargetPosition: {x: 0, y: 0, z: 0}
---- !u!114 &11481108
+--- !u!114 &11487020
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -405,7 +408,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 140448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c020ffd796e3447a8048c77bb1bd33, type: 3}
+  m_Script: {fileID: 11500000, guid: 08410d5d2559be343ad11b4a753d04f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CastTimeModifier: 1
@@ -413,20 +416,21 @@ MonoBehaviour:
   canCast: 0
   player: {fileID: 0}
   onCooldown: 0
-  cooldownTime: .5
+  cooldownTime: .300000012
   cooldownTimer: 0
-  damageBall: {fileID: 11476992, guid: 7e490a3b5e56cb44486376cc87a648a5, type: 2}
+  damageBall: {fileID: 11448872, guid: 7e490a3b5e56cb44486376cc87a648a5, type: 2}
+  damageBallAoE: {fileID: 0}
   spawnPoint: {fileID: 463120}
   damage: -20
---- !u!114 &11490656
+--- !u!114 &11495056
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150162}
+  m_GameObject: {fileID: 143398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c020ffd796e3447a8048c77bb1bd33, type: 3}
+  m_Script: {fileID: 11500000, guid: fb9ba9d3bd8895f4dbfe6e7097555ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CastTimeModifier: 1
@@ -434,11 +438,9 @@ MonoBehaviour:
   canCast: 0
   player: {fileID: 0}
   onCooldown: 0
-  cooldownTime: .5
+  cooldownTime: 5
   cooldownTimer: 0
-  damageBall: {fileID: 11436900, guid: 0ce2083e674e953479300a1e35f9e83e, type: 2}
-  spawnPoint: {fileID: 475622}
-  damage: 25
+  distance: 20
 --- !u!212 &21273508
 SpriteRenderer:
   m_ObjectHideFlags: 1
