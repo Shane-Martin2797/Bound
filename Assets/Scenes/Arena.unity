@@ -226,9 +226,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 422934, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .131999999
+    - target: {fileID: 120688, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
+      propertyPath: m_Name
+      value: DelayedPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
