@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DamageSpell : Spell
+public class DashSpell : Spell
 {
-	public BallSpell damageBall;
-	public Transform spawnPoint;
-	public float damage = 20f;
-	
+	public float distance = 20;
 	
 	public override void HoldCast ()
 	{
@@ -17,21 +14,22 @@ public class DamageSpell : Spell
 			}
 		}
 	}
+	
 	public override void ReleaseCast ()
 	{
 		if (canCast) {
-			BallSpell ball = Instantiate (damageBall, spawnPoint.transform.position, transform.rotation) as BallSpell;
-			ball.SetDamage (damage);
+			player.transform.Translate (Vector3.up * distance);
 		}
 		ResetValues ();
 	}
-
-
+	
 	public override void ResetValues ()
 	{
 		castTime = player.castTime;
-		CastTimeModifier *= CastTimeModifier;
+		castTime *= CastTimeModifier;
 		canCast = false;
 	}
+
+
 
 }
