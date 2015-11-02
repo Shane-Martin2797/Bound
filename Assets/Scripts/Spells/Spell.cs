@@ -7,13 +7,31 @@ public abstract class Spell : MonoBehaviour
 	public float castTime;
 	public bool canCast;
 	public PlayerController player;
+	public bool onCooldown;
+	public float cooldownTime;
+	public float cooldownTimer;
 	
 		
-	void Awake ()
+	public virtual void Awake ()
 	{
 		player = transform.parent.GetComponent<PlayerController> ();
 		ResetValues ();
 		OnSpellAwake ();
+	}
+	public virtual void Update ()
+	{
+		if (onCooldown) {
+			cooldownTimer -= Time.deltaTime;
+			if (cooldownTimer < 0) {
+				onCooldown = false;
+			}
+		}
+		OnSpellUpdate ();
+	}
+	public virtual void CooldownValues ()
+	{
+		cooldownTimer = cooldownTime;
+		onCooldown = true;
 	}
 	
 	//This occurs on button press... This is used for immediate casting of spells
@@ -33,12 +51,16 @@ public abstract class Spell : MonoBehaviour
 	//charge and will be used to cast the spell upon release of the button.
 	public virtual void ReleaseCast ()
 	{
-	
 	}
 	
 	public virtual void OnSpellAwake ()
 	{
 	
 	}
+	public virtual void OnSpellUpdate ()
+	{
+		
+	}
+	
 	public abstract void ResetValues ();
 }

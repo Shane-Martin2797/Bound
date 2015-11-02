@@ -8,4 +8,7 @@ public static class Scenes
 	public const string Title = "Title";
 	public const string EndScreen = "EndScreen";
 	public const string World = "World";
+	public const string BlueWin = "EndScreenBlue";
+	public const string OrangeWin = "EndScreenOrange";
+			
 }

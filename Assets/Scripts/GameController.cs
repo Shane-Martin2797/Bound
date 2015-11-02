@@ -5,23 +5,48 @@ using System.Collections.Generic;
 public class GameController : SingletonBehaviour<GameController>
 {
 	public static event System.Action<float> OnTimeChange;
-	public int team1Score = 0;
-	public int team2Score = 0;
+	public static event System.Action<int> OnTeam1LiveChange;
+	public static event System.Action<int> OnTeam2LiveChange;
+	public int team1Lives = 6;
+	public int team2Lives = 6;
 	public int scoreLimit = 100;
+	public float timer = 120;
 	
 	public static int winTeam;
 	
+	
+	
+	void Update ()
+	{
+		timer -= Time.deltaTime;
+		if (OnTimeChange != null) {
+			OnTimeChange (timer);
+		}
+	}
 	protected override void OnSingletonAwake ()
 	{
 		Application.LoadLevelAdditive (Scenes.HUD);
 	}
 	
-	void Start ()
+	public void Team1LosesLife ()
 	{
+		team1Lives--;
+		if (OnTeam1LiveChange != null) {
+			OnTeam1LiveChange (team1Lives);
+		}
+		if (team1Lives <= 0) {
+			GameOver (2);
+		}
 	}
-	void Update ()
+	public void Team2LosesLife ()
 	{
-		
+		team2Lives--;
+		if (OnTeam2LiveChange != null) {
+			OnTeam2LiveChange (team2Lives);
+		}
+		if (team2Lives <= 0) {
+			GameOver (1);
+		}
 	}
 	
 	public void GameOver (int teamNumber)
@@ -30,6 +55,13 @@ public class GameController : SingletonBehaviour<GameController>
 		wins++;
 		PlayerPrefs.SetInt ("Team" + teamNumber, wins);
 		winTeam = teamNumber;
+		
+		if (teamNumber == 1) {
+			Application.LoadLevel (Scenes.BlueWin);
+		}
+		if (teamNumber == 2) {
+			Application.LoadLevel (Scenes.OrangeWin);
+		}
 		Application.LoadLevel (Scenes.EndScreen);
 	}
 }
