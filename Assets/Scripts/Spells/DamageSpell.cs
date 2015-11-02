@@ -10,11 +10,19 @@ public class DamageSpell : Spell
 	
 	public override void HoldCast ()
 	{
+		if(!onCooldown){
 		if (!canCast) {
 			castTime -= Time.deltaTime;
 			if (castTime <= 0) {
 				canCast = true;
 			}
+		}
+		}
+		if (canCast) {
+			BallSpell ball = Instantiate (damageBall, spawnPoint.transform.position, transform.rotation) as BallSpell;
+			ball.SetDamage (damage);
+			CooldownValues();
+			ResetValues ();
 		}
 	}
 	public override void ReleaseCast ()
@@ -22,6 +30,7 @@ public class DamageSpell : Spell
 		if (canCast) {
 			BallSpell ball = Instantiate (damageBall, spawnPoint.transform.position, transform.rotation) as BallSpell;
 			ball.SetDamage (damage);
+			CooldownValues();
 		}
 		ResetValues ();
 	}

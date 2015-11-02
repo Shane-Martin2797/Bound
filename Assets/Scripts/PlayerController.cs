@@ -125,6 +125,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Movement ()
 	{
+		this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		Vector3 pos = transform.position;
 		Vector3 movementDirection = new Vector3 (inputDevice.LeftStickX.Value, inputDevice.LeftStickY.Value, 0) * movementSpeed * Time.deltaTime;
 		pos += movementDirection;
@@ -133,6 +134,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Rotation ()
 	{
+		this.GetComponent<Rigidbody2D>().angularVelocity = 0;
 		float angle = Mathf.Rad2Deg * Mathf.Atan2 (inputDevice.RightStickY.Value, inputDevice.RightStickX.Value) - 90;
 		GetComponent<Rigidbody2D> ().MoveRotation (angle);
 	}
@@ -142,7 +144,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (!offSpawn) {
 			health -= amount;
-			if (health < 0) {
+			if (health <= 0) {
 				PlayerDied ();
 			}
 			if (health > maxHealth) {
@@ -156,6 +158,7 @@ public class PlayerController : MonoBehaviour
 	public Vector3 dashTargetPosition;
 	public void DashSetup ()
 	{
+		float posZ = transform.position.z;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up, dashDistance, layers.value);
 		if (hit != null) {
 			if (hit.collider != null) {
@@ -166,6 +169,7 @@ public class PlayerController : MonoBehaviour
 		} else {
 			dashTargetPosition = (transform.position + (transform.up * dashDistance));
 		}
+		dashTargetPosition.z = posZ;
 		Dash ();
 	}
 	
