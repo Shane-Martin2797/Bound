@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {	
+	bool offSpawn = false;
+	float spawnTimer = 3;
 	[System.Serializable]
 	public class SpellBook
 	{
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
 	public float health = 120;
 	public float maxHealth = 120;
 	public float castTime = 0;
+	public GameObject healthBar;
 	
 	void Awake ()
 	{
@@ -46,7 +49,15 @@ public class PlayerController : MonoBehaviour
 			if (inputDevice.RightStickX.Value != 0 || inputDevice.RightStickY.Value != 0) {
 				Rotation ();
 			}
-			Inputs ();
+			if (!offSpawn) {
+				Inputs ();
+			}
+		}
+		if (offSpawn) {
+			spawnTimer -= Time.deltaTime;
+			if (spawnTimer < 0) {
+				offSpawn = false;
+			}
 		}
 	}
 	
@@ -129,12 +140,15 @@ public class PlayerController : MonoBehaviour
 	//This also heals player, just make amount -ve
 	public void DamagePlayer (float amount)
 	{
-		health -= amount;
-		if (health < 0) {
-			PlayerDied ();
-		}
-		if (health > maxHealth) {
-			health = maxHealth;
+		if (!offSpawn) {
+			health -= amount;
+			if (health < 0) {
+				PlayerDied ();
+			}
+			if (health > maxHealth) {
+				health = maxHealth;
+			}
+			healthBar.transform.localScale = new Vector3 (health / maxHealth, 1, 1);
 		}
 	}
 	
@@ -170,7 +184,15 @@ public class PlayerController : MonoBehaviour
 		} else {
 			Debug.LogWarning ("No Team Set");
 		}
+		Respawn ();
+	}
+	
+	void Respawn ()
+	{
 		transform.position = respawnPoint.position;
+		health = maxHealth;
+		offSpawn = true;
+		spawnTimer = 3;
 	}
 	
 	void OnDestroy ()
