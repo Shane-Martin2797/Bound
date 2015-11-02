@@ -27,7 +27,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422934}
-  - 114: {fileID: 11498188}
+  - 114: {fileID: 11422528}
   m_Layer: 0
   m_Name: Heal
   m_TagString: Untagged
@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475622}
-  - 114: {fileID: 11448714}
+  - 114: {fileID: 11411038}
   m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.101334341, y: -.101328783, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 475622}
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .140000001, y: .140000001}
---- !u!114 &11448714
+--- !u!114 &11411038
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -126,15 +126,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 150162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4a205824e594127a28f8e2129199e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 67c020ffd796e3447a8048c77bb1bd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CastTimeModifier: 1
   castTime: 0
   canCast: 0
-  damageBall: {fileID: 11443674, guid: 1997037a09b7748f19b3173a0fffdbd2, type: 2}
+  damageBall: {fileID: 11463172, guid: 0ce2083e674e953479300a1e35f9e83e, type: 2}
   spawnPoint: {fileID: 475622}
   damage: 20
+--- !u!114 &11422528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c020ffd796e3447a8048c77bb1bd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CastTimeModifier: 1
+  castTime: 0
+  canCast: 0
+  damageBall: {fileID: 11464620, guid: 7e490a3b5e56cb44486376cc87a648a5, type: 2}
+  spawnPoint: {fileID: 422934}
+  damage: -20
 --- !u!114 &11470644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,27 +166,10 @@ MonoBehaviour:
   spellBook:
     LBSpell: {fileID: 0}
     RBSpell: {fileID: 0}
-    RTSpell: {fileID: 11498188}
-    LTSpell: {fileID: 11448714}
+    RTSpell: {fileID: 11422528}
+    LTSpell: {fileID: 11411038}
   health: 120
   castTime: .5
---- !u!114 &11498188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4a205824e594127a28f8e2129199e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CastTimeModifier: 1
-  castTime: 0
-  canCast: 0
-  damageBall: {fileID: 11443674, guid: f8c37556c2c8947098beba86868535d5, type: 2}
-  spawnPoint: {fileID: 422934}
-  damage: -20
 --- !u!212 &21273508
 SpriteRenderer:
   m_ObjectHideFlags: 1
