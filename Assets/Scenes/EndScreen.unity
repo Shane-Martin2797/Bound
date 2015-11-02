@@ -131,7 +131,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
 --- !u!1 &131614070
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ RectTransform:
   - {fileID: 2099404032}
   - {fileID: 131614071}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -455,6 +455,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 319164220}
+--- !u!1 &328654051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 328654052}
+  m_Layer: 0
+  m_Name: Players
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &328654052
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328654051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.81124496, y: 2.75856638, z: 5.33094025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1365166276}
+  - {fileID: 1605727378}
+  - {fileID: 534782800}
+  - {fileID: 1910681309}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &440661483
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +559,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
 --- !u!1 &534782796
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +572,7 @@ GameObject:
   - 65: {fileID: 534782798}
   - 23: {fileID: 534782797}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: BlueteamSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,10 +628,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534782796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.07299995, y: 6.02600002, z: 6.06699991}
+  m_LocalPosition: {x: -.26175499, y: 3.26743364, z: .736059666}
   m_LocalScale: {x: .934417307, y: 1.04379654, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 328654052}
   m_RootOrder: 2
 --- !u!1 &894245482
 GameObject:
@@ -936,7 +967,7 @@ GameObject:
   - 65: {fileID: 1365166274}
   - 23: {fileID: 1365166273}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Orangeteamsmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,10 +1023,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1365166272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.07999992, y: 3.78999996, z: 6.06699991}
+  m_LocalPosition: {x: 5.89124489, y: 1.03143358, z: .736059666}
   m_LocalScale: {x: 1.06155646, y: 1.12652051, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 328654052}
   m_RootOrder: 0
 --- !u!1 &1588104034
 GameObject:
@@ -1027,7 +1058,7 @@ Transform:
   - {fileID: 1207522729}
   - {fileID: 894245483}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!82 &1588104036
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1190,7 +1221,7 @@ GameObject:
   - 65: {fileID: 1605727376}
   - 23: {fileID: 1605727375}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: OrangeTeambig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1246,10 +1277,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1605727374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.61999989, y: 4.11000013, z: 6.06699991}
+  m_LocalPosition: {x: 4.43124485, y: 1.35143375, z: .736059666}
   m_LocalScale: {x: 1.15080404, y: 1.63909662, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 328654052}
   m_RootOrder: 1
 --- !u!1 &1626971918
 GameObject:
@@ -1345,7 +1376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!1 &1657163295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1522,7 @@ GameObject:
   - 65: {fileID: 1910681307}
   - 23: {fileID: 1910681306}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Blueteambig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1547,11 +1578,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1910681305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.31900001, y: 6.28100014, z: 6.06699991}
+  m_LocalPosition: {x: -1.50775504, y: 3.52243376, z: .736059666}
   m_LocalScale: {x: 1.15080404, y: 1.63909662, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 328654052}
+  m_RootOrder: 3
 --- !u!1 &2099404031
 GameObject:
   m_ObjectHideFlags: 0
