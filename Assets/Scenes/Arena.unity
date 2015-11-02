@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &202262878 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 120688, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
+  m_PrefabInternal: {fileID: 778900664}
 --- !u!1 &238781184
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +169,7 @@ MonoBehaviour:
   team1Lives: 6
   team2Lives: 6
   scoreLimit: 10
+  timer: 120
 --- !u!4 &369606806
 Transform:
   m_ObjectHideFlags: 0
@@ -199,11 +204,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 374604016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .234081656, y: 14.1999998, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!1 &379256383 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 184324, guid: 1f1aec008284e4472bc1a2f21913b61b, type: 2}
+  m_PrefabInternal: {fileID: 2113968394}
 --- !u!1 &414101692
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +456,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499930, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.101328783
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 499930, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
       propertyPath: m_LocalPosition.z
@@ -543,7 +552,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454212, guid: 1f1aec008284e4472bc1a2f21913b61b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.101328783
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 454212, guid: 1f1aec008284e4472bc1a2f21913b61b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -751,7 +760,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d754b3749b44bcc860011d00fbca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjectsToFollow: []
+  gameObjectsToFollow:
+  - {fileID: 1488414294}
+  - {fileID: 202262878}
+  - {fileID: 379256383}
+  - {fileID: 2034797524}
 --- !u!1 &1465228207
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +835,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1465228207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.219999999, y: 4.51000023, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -843,6 +856,10 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1488414294 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 184324, guid: 1f1aec008284e4472bc1a2f21913b61b, type: 2}
+  m_PrefabInternal: {fileID: 1066124766}
 --- !u!1 &1678215220
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +921,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499930, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.9000001
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 499930, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
       propertyPath: m_LocalPosition.z
@@ -965,6 +982,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2034797524 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 120688, guid: f6e0d7204e22e42d194870bba0582113, type: 2}
+  m_PrefabInternal: {fileID: 2017499991}
 --- !u!1 &2113578570
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +1008,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113578570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .234081656, y: -6.80000019, z: 0}
+  m_LocalPosition: {x: 0, y: -15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1005,7 +1026,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454212, guid: 1f1aec008284e4472bc1a2f21913b61b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.9000001
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 454212, guid: 1f1aec008284e4472bc1a2f21913b61b, type: 2}
       propertyPath: m_LocalPosition.z

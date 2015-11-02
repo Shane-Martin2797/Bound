@@ -55,6 +55,13 @@ public class GameController : SingletonBehaviour<GameController>
 		wins++;
 		PlayerPrefs.SetInt ("Team" + teamNumber, wins);
 		winTeam = teamNumber;
+		
+		if (teamNumber == 1) {
+			Application.LoadLevel (Scenes.BlueWin);
+		}
+		if (teamNumber == 2) {
+			Application.LoadLevel (Scenes.OrangeWin);
+		}
 		Application.LoadLevel (Scenes.EndScreen);
 	}
 }
