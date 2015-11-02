@@ -4,6 +4,8 @@ using System.Collections;
 public abstract class Spell : MonoBehaviour
 {
 	public float CastTimeModifier = 1f;
+	public float castTime;
+	public bool canCast;
 		
 	void Awake ()
 	{
@@ -34,4 +36,5 @@ public abstract class Spell : MonoBehaviour
 	{
 	
 	}
+	public abstract void ResetValues ();
 }

@@ -124,16 +124,13 @@ public class PlayerController : MonoBehaviour
 		GetComponent<Rigidbody2D> ().MoveRotation (angle);
 	}
 	
+	//This also heals player, just make amount -ve
 	public void DamagePlayer (float amount)
 	{
 		health -= amount;
 		if (health < 0) {
 			PlayerDied ();
 		}
-	}
-	public void HealPlayer (float amount)
-	{
-		health += amount;
 		if (health > maxHealth) {
 			health = maxHealth;
 		}

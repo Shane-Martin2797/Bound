@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5839348}
   - 50: {fileID: 5054632}
   m_Layer: 0
-  m_Name: DamageBall
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
