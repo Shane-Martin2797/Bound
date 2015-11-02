@@ -57,13 +57,8 @@
      <Compile Include="Assets\InControl\Editor\ReorderableList\ReorderableListFlags.cs" />
      <Compile Include="Assets\InControl\Editor\ReorderableList\ReorderableListGUI.cs" />
      <Compile Include="Assets\InControl\Editor\ReorderableList\SerializedPropertyAdaptor.cs" />
-     <None Include="Assets\Prefabs\Old\Medieval_House 1\Info.txt" />
-     <None Include="Assets\Prefabs\Old\Medieval_House\Info.txt" />
      <None Include="Assets\InControl\README\README.txt" />
      <None Include="Assets\Art\Skyboxes\_skybox info.txt" />
- <Reference Include="Assembly-UnityScript">
- <HintPath>/Users/shanemartin/BitBucket/bound/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

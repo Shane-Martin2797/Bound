@@ -155,7 +155,6 @@
      <Compile Include="Assets\InControl\Source\XInput\XInputDotNetPure\GamePad.cs" />
      <Compile Include="Assets\InControl\Source\XInput\XInputDotNetPure\Utils.cs" />
      <Compile Include="Assets\InControl\Test\TestInputManager.cs" />
-     <Compile Include="Assets\Prefabs\Old\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\AudioController.cs" />
      <Compile Include="Assets\Scripts\BGMController.cs" />
      <Compile Include="Assets\Scripts\DynamicCamera.cs" />
@@ -171,8 +170,6 @@
      <Compile Include="Assets\Scripts\UI\Scenes.cs" />
      <Compile Include="Assets\Scripts\UI\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\UI\UITimer.cs" />
-     <None Include="Assets\Prefabs\Old\Medieval_House 1\Info.txt" />
-     <None Include="Assets\Prefabs\Old\Medieval_House\Info.txt" />
      <None Include="Assets\InControl\README\README.txt" />
      <None Include="Assets\Art\Skyboxes\_skybox info.txt" />
  <Reference Include="UnityEngine.UI">

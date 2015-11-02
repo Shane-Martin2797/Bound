@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 	private float movementSpeed = 10;
 	public float health = 120;
 	private float maxHealth = 120;
+	public float castTime = 0;
 	
 	void Awake ()
 	{
