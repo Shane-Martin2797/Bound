@@ -246,7 +246,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e1c1b82334aa51f45b53b74837d915de, type: 2}
+  - {fileID: 2100000, guid: 1c0a3f96ca4ec2b4188e08de88259197, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -270,7 +270,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 917e608286bede54d97e74b0cf885e95, type: 2}
+  - {fileID: 2100000, guid: ae15d8e3148374d4194786c9778c8631, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -396,7 +396,7 @@ MonoBehaviour:
   onCooldown: 0
   cooldownTime: 2.5
   cooldownTimer: 0
-  distance: 10
+  distance: 7
 --- !u!114 &11443820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,7 +436,7 @@ MonoBehaviour:
   onCooldown: 0
   cooldownTime: .5
   cooldownTimer: 0
-  damageBall: {fileID: 0}
+  damageBall: {fileID: 11448872, guid: 7e490a3b5e56cb44486376cc87a648a5, type: 2}
   spawnPoint: {fileID: 492228}
   damage: -10
 --- !u!212 &21298436
