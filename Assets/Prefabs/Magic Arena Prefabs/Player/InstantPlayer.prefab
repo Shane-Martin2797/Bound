@@ -373,7 +373,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1280
   respawnPoint: {fileID: 0}
-  health: 100
   maxHealth: 100
   castTime: 0
   healthBar: {fileID: 135066}
@@ -396,7 +395,7 @@ MonoBehaviour:
   onCooldown: 0
   cooldownTime: 2.5
   cooldownTimer: 0
-  distance: 7
+  distance: 5
 --- !u!114 &11443820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,7 +414,7 @@ MonoBehaviour:
   onCooldown: 0
   cooldownTime: .400000006
   cooldownTimer: 0
-  damageBall: {fileID: 11401030, guid: 0ce2083e674e953479300a1e35f9e83e, type: 2}
+  damageBall: {fileID: 0}
   spawnPoint: {fileID: 423178}
   damage: 15
 --- !u!114 &11482354
