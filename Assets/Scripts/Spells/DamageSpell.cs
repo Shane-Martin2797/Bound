@@ -3,52 +3,68 @@ using System.Collections;
 
 public class DamageSpell : Spell
 {
-	public BallSpell damageBall;
-	public AoEBallSpell damageBallAoE;
+	public Ball damageBall;
 	public Transform spawnPoint;
 	public float damage = 20f;
+	bool hasInst = false;
 	
 	
-	public override void HoldCast ()
-	{
-		if (!onCooldown) {
-			if (!canCast) {
-				castTime -= Time.deltaTime;
-				if (castTime <= 0) {
-					canCast = true;
-				}
-			}
-		}
-		if (canCast) {
-			Shoot ();
-		}
-	}
 	public override void ReleaseCast ()
 	{
 		if (canCast) {
-			BallSpell ball = Instantiate (damageBall, spawnPoint.transform.position, transform.rotation) as BallSpell;
+			Ball ball = Instantiate (damageBall, spawnPoint.transform.position, transform.rotation) as Ball;
 			ball.SetDamage (damage);
 			CooldownValues ();
 		}
 		ResetValues ();
+		ResetBallSize ();
 	}
 	
-	void Shoot ()
+	public override void Shoot ()
 	{
 		if (damageBall != null) {
-			BallSpell ball = Instantiate (damageBall, spawnPoint.transform.position, transform.rotation) as BallSpell;
+			Ball ball = Instantiate (damageBall, spawnPoint.transform.position, transform.rotation) as Ball;
 			ball.SetDamage (damage);
 			CooldownValues ();
 			ResetValues ();
-		} else if (damageBallAoE != null) {
-			AoEBallSpell ball = Instantiate (damageBallAoE, spawnPoint.transform.position, transform.rotation) as AoEBallSpell;
-			ball.SetDamage (damage);
-			CooldownValues ();
-			ResetValues ();
-		}
-		
+		} 
 	}
-
+	
+	GameObject ball;
+	float normalX;
+	public override void Charge ()
+	{
+		if (player.castTime > 0) {
+			if (!hasInst) {
+				ball = Instantiate (damageBall.gameObject) as GameObject;
+				normalX = ball.transform.localScale.x;
+				ball.transform.position = spawnPoint.transform.position;
+				ball.transform.localScale = Vector3.zero;
+				Destroy (ball.GetComponent<Collider2D> ());
+				Destroy (ball.GetComponent<Ball> ());
+				hasInst = true;
+			}
+			if (hasInst) {
+				ball.transform.position = spawnPoint.transform.position;
+				IncreaseBallSize ();
+			}
+		}
+	}
+	
+	void IncreaseBallSize ()
+	{
+		if (ball != null) {
+			ball.transform.localScale += new Vector3 (Time.deltaTime, Time.deltaTime, Time.deltaTime) / player.castTime * normalX;
+			if (ball.transform.localScale.x >= normalX) {
+				ResetBallSize ();
+			}
+		}
+	}
+	void ResetBallSize ()
+	{
+		ball.transform.localScale = Vector3.zero;
+	}
+	
 	public override void ResetValues ()
 	{
 		castTime = player.castTime;

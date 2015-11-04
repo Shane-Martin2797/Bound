@@ -1,15 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Spells/DamageSpell.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="195" Column="3" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spells/DashSpell.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spells/Spell.cs" Line="1" Column="1" />
-      <File FileName="../../bitbucket/bound/Assets/Scripts/UI/Scenes.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="76" Column="36" />
       <File FileName="Assets/Scripts/Spells/SpellExtras/AoEBallSpell.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spells/SpellExtras/BallSpell.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spells/DamageSpell.cs" Line="35" Column="2" />
+      <File FileName="Assets/Scripts/Spells/Spell.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Spells/DamageSpell.cs" Line="47" Column="1" />
+      <File FileName="Assets/Scripts/Spells/SpellExtras/Ball.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

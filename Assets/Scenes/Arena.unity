@@ -294,10 +294,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d6049cabc8542c9a6e7b494134287e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
   team1Lives: 6
   team2Lives: 6
   scoreLimit: 10
   timer: 120
+  cam: {fileID: 0}
+  inCont: {fileID: 0}
 --- !u!4 &369606806
 Transform:
   m_ObjectHideFlags: 0
@@ -383,6 +386,10 @@ Prefab:
     - target: {fileID: 120688, guid: 14378acebcd3cb04fb70e2f1df09ccee, type: 2}
       propertyPath: m_Name
       value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 120688, guid: 14378acebcd3cb04fb70e2f1df09ccee, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14378acebcd3cb04fb70e2f1df09ccee, type: 2}
@@ -485,6 +492,10 @@ Prefab:
     - target: {fileID: 120688, guid: 14378acebcd3cb04fb70e2f1df09ccee, type: 2}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 120688, guid: 14378acebcd3cb04fb70e2f1df09ccee, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14378acebcd3cb04fb70e2f1df09ccee, type: 2}
@@ -659,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &951879368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,7 +1019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1368442201
 Transform:
   m_ObjectHideFlags: 0
@@ -1561,7 +1572,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 184324, guid: 0fdddc06a36635f479ccee5d98395a2a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fdddc06a36635f479ccee5d98395a2a, type: 2}
@@ -1615,7 +1626,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 184324, guid: 0fdddc06a36635f479ccee5d98395a2a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fdddc06a36635f479ccee5d98395a2a, type: 2}

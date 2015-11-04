@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallSpell : CollisionTriggerBehaviour
+public class Ball : CollisionTriggerBehaviour
 {
-	float damage = 20;
-	float lifetime = 5f;
+	public float damage = 20;
+	public float lifetime = 5f;
 	public float speed = 5;
 
-	void Update ()
+	public virtual void Update ()
 	{
 		transform.Translate (Vector3.up * Time.deltaTime * speed);
 		lifetime -= Time.deltaTime;
@@ -15,7 +15,8 @@ public class BallSpell : CollisionTriggerBehaviour
 			CleanUp ();
 		}
 	}
-	public void SetDamage (float amount)
+	
+	public virtual void SetDamage (float amount)
 	{
 		damage = amount;
 	}
@@ -28,7 +29,7 @@ public class BallSpell : CollisionTriggerBehaviour
 		CleanUp ();
 	}
 	
-	void CleanUp ()
+	public virtual void CleanUp ()
 	{
 		Destroy (this.gameObject);
 	}

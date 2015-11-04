@@ -2,20 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class TitleManager : MonoBehaviour
+public class EndGameCont : MonoBehaviour
 {
-
+	
+	
 	void Update ()
 	{
 		if (InControl.InputManager.ActiveDevice.Action1.WasPressed) {
-			StartGame ();
+			LoadTitle ();
 		}
 	}
-
-	void StartGame ()
+	
+	void LoadTitle ()
 	{
-		Application.LoadLevel (Scenes.Arena);
+		Application.LoadLevel (Scenes.Title);
 	}
+	
 	
 	
 }

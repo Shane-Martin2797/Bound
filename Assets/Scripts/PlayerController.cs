@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {	
 	bool offSpawn = false;
 	float spawnTimer = 3;
+	float force = 500;
+	float dashDamage = 20;
 	[System.Serializable]
 	public class SpellBook
 	{
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
 	void Awake ()
 	{
 		health = maxHealth;
+		DontDestroyOnLoad (this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -125,7 +128,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Movement ()
 	{
-		this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		this.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 		Vector3 pos = transform.position;
 		Vector3 movementDirection = new Vector3 (inputDevice.LeftStickX.Value, inputDevice.LeftStickY.Value, 0) * movementSpeed * Time.deltaTime;
 		pos += movementDirection;
@@ -134,7 +137,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Rotation ()
 	{
-		this.GetComponent<Rigidbody2D>().angularVelocity = 0;
+		this.GetComponent<Rigidbody2D> ().angularVelocity = 0;
 		float angle = Mathf.Rad2Deg * Mathf.Atan2 (inputDevice.RightStickY.Value, inputDevice.RightStickX.Value) - 90;
 		GetComponent<Rigidbody2D> ().MoveRotation (angle);
 	}
@@ -163,6 +166,14 @@ public class PlayerController : MonoBehaviour
 		if (hit != null) {
 			if (hit.collider != null) {
 				dashTargetPosition = hit.collider.bounds.ClosestPoint (transform.position);
+				PlayerController pHit = hit.collider.gameObject.GetComponent<PlayerController> ();
+				if (pHit != null) {
+					pHit.DamagePlayer (dashDamage);
+					pHit.offSpawn = true;
+					pHit.spawnTimer = 1;
+					Vector3 normalisedDirection = (pHit.transform.position - transform.position).normalized;
+					pHit.GetComponent<Rigidbody2D> ().AddForce (normalisedDirection * force);
+				}
 			} else {
 				dashTargetPosition = (transform.position + (transform.up * dashDistance));
 			}
@@ -181,20 +192,22 @@ public class PlayerController : MonoBehaviour
 	
 	void PlayerDied ()
 	{
-		if (team == 1) {
-			GameController.Instance.Team1LosesLife ();
-		} else if (team == 2) {
-			GameController.Instance.Team2LosesLife ();
-		} else {
-			Debug.LogWarning ("No Team Set");
+		if (GameController.Instance != null) {
+			if (team == 1) {
+				GameController.Instance.Team1LosesLife ();
+			} else if (team == 2) {
+				GameController.Instance.Team2LosesLife ();
+			} else {
+				Debug.LogWarning ("No Team Set");
+			}
 		}
 		Respawn ();
 	}
 	
-	void Respawn ()
+	public void Respawn ()
 	{
 		transform.position = respawnPoint.position;
-		health = maxHealth;
+		DamagePlayer (-maxHealth);
 		offSpawn = true;
 		spawnTimer = 3;
 	}

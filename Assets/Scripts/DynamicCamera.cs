@@ -5,6 +5,10 @@ using System.Collections.Generic;
 public class DynamicCamera : MonoBehaviour
 {
 	public List<GameObject> gameObjectsToFollow = new List<GameObject> ();
+	void Awake ()
+	{
+		DontDestroyOnLoad (this.gameObject);
+	}
 	
 	// Update is called once per frame
 	void Update ()

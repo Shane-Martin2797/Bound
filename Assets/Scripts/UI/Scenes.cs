@@ -10,5 +10,5 @@ public static class Scenes
 	public const string World = "World";
 	public const string BlueWin = "EndScreenBlue";
 	public const string OrangeWin = "EndScreenOrange";
-			
+	public const string Arena = "Arena";		
 }

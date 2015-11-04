@@ -7,25 +7,40 @@ public class GameController : SingletonBehaviour<GameController>
 	public static event System.Action<float> OnTimeChange;
 	public static event System.Action<int> OnTeam1LiveChange;
 	public static event System.Action<int> OnTeam2LiveChange;
+	public PlayerController[] players;
 	public int team1Lives = 6;
 	public int team2Lives = 6;
 	public int scoreLimit = 100;
 	public float timer = 120;
 	
 	public static int winTeam;
-	
-	
+	public Camera cam;
+	public GameObject inCont;
 	
 	void Update ()
 	{
-		timer -= Time.deltaTime;
-		if (OnTimeChange != null) {
-			OnTimeChange (timer);
+		if (timer > 0) {
+			timer -= Time.deltaTime;
+			if (OnTimeChange != null) {
+				OnTimeChange (timer);
+			}
+		} else {
+			if (team1Lives > team2Lives) {
+				GameOver (1);
+			} else if (team2Lives > team1Lives) {
+				GameOver (2);
+			}
 		}
 	}
 	protected override void OnSingletonAwake ()
 	{
 		Application.LoadLevelAdditive (Scenes.HUD);
+		players = FindObjectsOfType<PlayerController> ();
+		foreach (var player in players) {
+			player.Respawn ();
+		}
+		cam = FindObjectOfType<Camera> ();
+		inCont = FindObjectOfType<InControl.InControlManager> ().gameObject;
 	}
 	
 	public void Team1LosesLife ()
@@ -62,6 +77,12 @@ public class GameController : SingletonBehaviour<GameController>
 		if (teamNumber == 2) {
 			Application.LoadLevel (Scenes.OrangeWin);
 		}
+		for (int i = 0; i < players.Length; ++i) {
+			Destroy (players [i].gameObject);
+		}
+		Destroy (cam.gameObject);
+		Destroy (inCont.gameObject);
 		Application.LoadLevel (Scenes.EndScreen);
+		Destroy (gameObject);
 	}
 }
