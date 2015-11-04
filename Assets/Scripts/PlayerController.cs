@@ -5,7 +5,10 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {	
 	bool offSpawn = false;
+	bool canMove = true;
 	float spawnTimer = 3;
+	float force = 500;
+	float dashDamage = 20;
 	[System.Serializable]
 	public class SpellBook
 	{
@@ -27,14 +30,16 @@ public class PlayerController : MonoBehaviour
 	public LayerMask layers;
 	public Transform respawnPoint;
 	private float movementSpeed = 10;
-	public float health = 120;
+	private float dashSpeed = 80;
+	private float health = 120;
 	public float maxHealth = 120;
 	public float castTime = 0;
 	public GameObject healthBar;
 	
 	void Awake ()
 	{
-		health = maxHealth;
+		DamagePlayer (-maxHealth);
+		DontDestroyOnLoad (this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -44,7 +49,9 @@ public class PlayerController : MonoBehaviour
 			ScanForInputDevice ();
 		} else {
 			if (inputDevice.LeftStickX.Value != 0 || inputDevice.LeftStickY.Value != 0) {
-				Movement ();
+				if (canMove) {
+					Movement ();
+				}
 			}
 			if (inputDevice.RightStickX.Value != 0 || inputDevice.RightStickY.Value != 0) {
 				Rotation ();
@@ -58,6 +65,9 @@ public class PlayerController : MonoBehaviour
 			if (spawnTimer < 0) {
 				offSpawn = false;
 			}
+		}
+		if (lerping) {
+			LerpDash ();
 		}
 	}
 	
@@ -125,7 +135,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Movement ()
 	{
-		this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		this.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 		Vector3 pos = transform.position;
 		Vector3 movementDirection = new Vector3 (inputDevice.LeftStickX.Value, inputDevice.LeftStickY.Value, 0) * movementSpeed * Time.deltaTime;
 		pos += movementDirection;
@@ -134,7 +144,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Rotation ()
 	{
-		this.GetComponent<Rigidbody2D>().angularVelocity = 0;
+		this.GetComponent<Rigidbody2D> ().angularVelocity = 0;
 		float angle = Mathf.Rad2Deg * Mathf.Atan2 (inputDevice.RightStickY.Value, inputDevice.RightStickX.Value) - 90;
 		GetComponent<Rigidbody2D> ().MoveRotation (angle);
 	}
@@ -163,6 +173,14 @@ public class PlayerController : MonoBehaviour
 		if (hit != null) {
 			if (hit.collider != null) {
 				dashTargetPosition = hit.collider.bounds.ClosestPoint (transform.position);
+				/*			
+				PlayerController pHit = hit.collider.gameObject.GetComponent<PlayerController> ();
+				if (pHit != null) {
+					pHit.DamagePlayer (dashDamage);
+					Vector3 normalisedDirection = (pHit.transform.position - transform.position).normalized;
+					pHit.GetComponent<Rigidbody2D> ().AddForce (normalisedDirection * force);
+				}
+				*/
 			} else {
 				dashTargetPosition = (transform.position + (transform.up * dashDistance));
 			}
@@ -173,28 +191,52 @@ public class PlayerController : MonoBehaviour
 		Dash ();
 	}
 	
+	
+	bool lerping = false;
+	float timer = 0;
+	float distance = 0;
+	float totalTime = 0;
+	Vector3 myPosition;
+	
 	void Dash ()
 	{
-		transform.position = dashTargetPosition;
+		distance = Vector3.Distance (transform.position, dashTargetPosition);
+		totalTime = distance / dashSpeed;
+		myPosition = transform.position;
+		lerping = true;
+		canMove = false;
+		timer = 0;
 	}
 	
+	void LerpDash ()
+	{
+		timer += Time.deltaTime / totalTime;
+		Vector3 pos = Vector3.Lerp (myPosition, dashTargetPosition, timer);
+		transform.position = pos;
+		if (timer >= 1) {
+			lerping = false;
+			canMove = true;
+		}
+	}
 	
 	void PlayerDied ()
 	{
-		if (team == 1) {
-			GameController.Instance.Team1LosesLife ();
-		} else if (team == 2) {
-			GameController.Instance.Team2LosesLife ();
-		} else {
-			Debug.LogWarning ("No Team Set");
+		if (GameController.Instance != null) {
+			if (team == 1) {
+				GameController.Instance.Team1LosesLife ();
+			} else if (team == 2) {
+				GameController.Instance.Team2LosesLife ();
+			} else {
+				Debug.LogWarning ("No Team Set");
+			}
 		}
 		Respawn ();
 	}
 	
-	void Respawn ()
+	public void Respawn ()
 	{
-		transform.position = respawnPoint.position;
-		health = maxHealth;
+		transform.position = respawnPoint.position + new Vector3 (Random.Range (-3, 4), Random.Range (-3, 4), 0);
+		DamagePlayer (-maxHealth);
 		offSpawn = true;
 		spawnTimer = 3;
 	}

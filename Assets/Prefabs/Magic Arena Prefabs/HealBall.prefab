@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21270186}
   - 58: {fileID: 5839348}
   - 50: {fileID: 5054632}
-  - 114: {fileID: 11476992}
+  - 114: {fileID: 11448872}
   m_Layer: 0
   m_Name: HealBall
   m_TagString: Untagged
@@ -60,7 +60,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .100000001
---- !u!114 &11476992
+--- !u!114 &11448872
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,10 +68,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 118416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbabc81c5c0dd614ea2a25f782c161a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 86d61e8da65362e4c8bd31604ca70fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 22
 --- !u!212 &21270186
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: .0482757092, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: .296551704, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -111,15 +111,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.g
-      value: .0482757092
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: .296551704
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: speed
-      value: 25
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x

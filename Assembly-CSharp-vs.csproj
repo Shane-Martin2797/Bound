@@ -173,7 +173,6 @@
      <Compile Include="Assets\Scripts\UI\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\UI\UILives.cs" />
      <Compile Include="Assets\Scripts\UI\UITimer.cs" />
-     <None Include="Assets\Prefabs\Tree\Info.txt" />
      <None Include="Assets\InControl\README\README.txt" />
      <None Include="Assets\Art\Skyboxes\_skybox info.txt" />
  <Reference Include="UnityEngine.UI">

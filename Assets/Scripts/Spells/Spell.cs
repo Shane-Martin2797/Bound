@@ -44,7 +44,18 @@ public abstract class Spell : MonoBehaviour
 	//Release and a Timer to used charged spells
 	public virtual void HoldCast ()
 	{
-	
+		if (!onCooldown) {
+			if (!canCast) {
+				castTime -= Time.deltaTime;
+				Charge ();
+				if (castTime <= 0) {
+					canCast = true;
+				}
+			}
+		}
+		if (canCast) {
+			Shoot ();
+		}
 	}
 	
 	//This occurs as the button is released... this can be used to activate a spell that required a 
@@ -60,6 +71,15 @@ public abstract class Spell : MonoBehaviour
 	public virtual void OnSpellUpdate ()
 	{
 		
+	}
+	
+	public virtual void Shoot ()
+	{
+	
+	}
+	public virtual void Charge ()
+	{
+	
 	}
 	
 	public abstract void ResetValues ();

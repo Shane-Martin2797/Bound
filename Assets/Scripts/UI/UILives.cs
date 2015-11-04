@@ -20,11 +20,11 @@ public class UILives : MonoBehaviour
 	
 	void HandleOnTeam1LiveChange (int num)
 	{
-		team1Lives.text = num.ToString ("x0");
+		team1Lives.text = "x" + num.ToString ("0");
 	}
 
 	void HandleOnTeam2LiveChange (int num)
 	{
-		team2Lives.text = num.ToString ("x0");
+		team2Lives.text = "x" + num.ToString ("0");
 	}
 }
