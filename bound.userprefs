@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../TestCode/Assets/CSVReader.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="41" Column="29" />
-      <File FileName="Assets/Scripts/Spells/DashSpell.cs" Line="14" Column="25" />
+      <File FileName="../../TestCode/Assets/CSVReader.cs" Line="10" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
