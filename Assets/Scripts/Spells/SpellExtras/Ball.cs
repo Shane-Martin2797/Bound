@@ -3,9 +3,26 @@ using System.Collections;
 
 public class Ball : CollisionTriggerBehaviour
 {
-	public float damage = 20;
+	public float damage;
 	public float lifetime = 5f;
 	public float speed = 5;
+	public GameObject particles;
+
+	public virtual void OnEnable()
+	{
+		if(particles != null)
+		{
+			particles.SetActive(true);
+		}
+	}
+
+	public virtual void OnDisable()
+	{
+		if(particles != null)
+		{
+			particles.SetActive(false);
+		}
+	}
 
 	public virtual void Update ()
 	{

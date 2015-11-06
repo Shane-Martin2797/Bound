@@ -8,7 +8,9 @@ public class DamageSpell : Spell
 	public float damage = 20f;
 	bool hasInst = false;
 	
-	
+	private GameObject ball;
+	private float normalX;
+
 	public override void ReleaseCast ()
 	{
 		if (canCast) {
@@ -17,7 +19,9 @@ public class DamageSpell : Spell
 			CooldownValues ();
 		}
 		ResetValues ();
-		ResetBallSize ();
+		if(this.ball != null){
+			ResetBallSize ();
+		}
 	}
 	
 	public override void Shoot ()
@@ -30,8 +34,6 @@ public class DamageSpell : Spell
 		} 
 	}
 	
-	GameObject ball;
-	float normalX;
 	public override void Charge ()
 	{
 		if (player.castTime > 0) {

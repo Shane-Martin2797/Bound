@@ -394,7 +394,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1280
   respawnPoint: {fileID: 0}
-  health: 120
   maxHealth: 120
   castTime: .5
   healthBar: {fileID: 174746}
@@ -438,7 +437,7 @@ MonoBehaviour:
   onCooldown: 0
   cooldownTime: 5
   cooldownTimer: 0
-  distance: 13
+  distance: 10
 --- !u!212 &21273508
 SpriteRenderer:
   m_ObjectHideFlags: 1
