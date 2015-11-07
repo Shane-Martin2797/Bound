@@ -14,7 +14,7 @@ public class TitleManager : MonoBehaviour
 
 	void StartGame ()
 	{
-		Application.LoadLevel (Scenes.Arena);
+		Application.LoadLevel (Scenes.World);
 	}
 	
 	
