@@ -23,8 +23,10 @@ public class DynamicCamera : MonoBehaviour
 	
 	void FollowGameObjects ()
 	{
-		Vector3 pos1ForAverage = Vector3.zero;
-		Vector3 pos2ForAverage = Vector3.zero;
+		//Vector3 pos1ForAverage = Vector3.zero;
+		//Vector3 pos2ForAverage = Vector3.zero;
+		
+		Vector3 positionAverage = Vector3.zero;
 		
 		float currentMaxDistance = 0;
 		for (int i= 0; i < gameObjectsToFollow.Count; ++i) {
@@ -33,13 +35,20 @@ public class DynamicCamera : MonoBehaviour
 					float distance = Vector3.Distance (gameObjectsToFollow [i].transform.position, gameObjectsToFollow [j].transform.position);
 					if (distance >= currentMaxDistance) {
 						currentMaxDistance = distance;
-						pos1ForAverage = gameObjectsToFollow [i].transform.position;
-						pos2ForAverage = gameObjectsToFollow [j].transform.position;
+						//pos1ForAverage = gameObjectsToFollow [i].transform.position;
+						//pos2ForAverage = gameObjectsToFollow [j].transform.position;
 					}
 				}
 			}
 		}
-		Vector3 positionAverage = (pos1ForAverage + pos2ForAverage) / 2;
+		
+		for (int i = 0; i < gameObjectsToFollow.Count; ++i) {
+			positionAverage += (gameObjectsToFollow [i].transform.position);
+		}
+		
+		positionAverage /= gameObjectsToFollow.Count;
+		
+		//Vector3 positionAverage = (pos1ForAverage + pos2ForAverage) / 2;
 		transform.position = positionAverage;
 		AdjustCameraSize (currentMaxDistance);
 		

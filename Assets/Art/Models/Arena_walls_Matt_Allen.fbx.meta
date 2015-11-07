@@ -1,37 +1,15 @@
 fileFormatVersion: 2
-guid: 423d37d131694479290c49073655bb46
-timeCreated: 1446878583
+guid: 39111a34e9d7c46ef9f97caa53c9def4
+timeCreated: 1446878611
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Tall_Girl
-    100004: Tall_Girl_Dress
-    100006: Tall_Girl_Eye
-    100008: Tall_Girl_Hair
-    100010: Tall_Girl_Shoes
     400000: //RootNode
-    400002: Tall_Girl
-    400004: Tall_Girl_Dress
-    400006: Tall_Girl_Eye
-    400008: Tall_Girl_Hair
-    400010: Tall_Girl_Shoes
-    2300000: Tall_Girl
-    2300002: Tall_Girl_Dress
-    2300004: Tall_Girl_Eye
-    2300006: Tall_Girl_Hair
-    2300008: Tall_Girl_Shoes
-    3300000: Tall_Girl
-    3300002: Tall_Girl_Dress
-    3300004: Tall_Girl_Eye
-    3300006: Tall_Girl_Hair
-    3300008: Tall_Girl_Shoes
-    4300000: Tall_Girl
-    4300002: Tall_Girl_Dress
-    4300004: Tall_Girl_Eye
-    4300006: Tall_Girl_Hair
-    4300008: Tall_Girl_Shoes
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cone
   materials:
     importMaterials: 1
     materialName: 0
