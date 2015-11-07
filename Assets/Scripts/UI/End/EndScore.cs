@@ -9,6 +9,6 @@ public class EndScore : MonoBehaviour
 	
 	void Awake ()
 	{
-		text.text = "Team " + GameController.winTeam + " Wins" + "\n" + " Score: " + PlayerPrefs.GetInt ("Team" + GameController.winTeam, 0);
+		//text.text = "Team " + GameController.winTeam + " Wins" + "\n" + " Score: " + PlayerPrefs.GetInt ("Team" + GameController.winTeam, 0);
 	}
 }
