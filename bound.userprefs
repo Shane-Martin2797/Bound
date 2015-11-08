@@ -1,22 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="F:\6th Term\GDS210\Re-Volt\Assets\Scripts\S_Stewart.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="247" Column="3" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\Title\TitleManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DynamicCamera.cs" Line="33" Column="27" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Spells/SpellExtras/AoEIndicator.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Spells/SpellExtras/AoEIndicator.cs" Line="14" Column="58" />
-      <File FileName="Assets/Scripts/Spells/DashSpell.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spells/SpellExtras/AoEBallSpell.cs" Line="1" Column="1" />
-      <File FileName="../../GitHub/ZombieGame/Assets/Scripts/Weapons/Bullets/Base/BaseBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spells/Spell.cs" Line="1" Column="1" />
->>>>>>> e2a957578245c9c67df3b86cbaf6c3d9090b025e
+      <File FileName="F:\6th Term\GDS210\Re-Volt\Assets\Scripts\S_Stewart.cs" Line="45" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
