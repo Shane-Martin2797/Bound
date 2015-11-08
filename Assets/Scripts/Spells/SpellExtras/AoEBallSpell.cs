@@ -3,7 +3,8 @@ using System.Collections;
 
 public class AoEBallSpell : Ball
 {
-	public float radius = 3;
+	public float radius = 5;
+	public float minDamage = 5;
 
 	public override void NotifyEnter (GameObject gameObj)
 	{
@@ -17,7 +18,9 @@ public class AoEBallSpell : Ball
 			if (hit [i].collider != null) {
 				PlayerController player = hit [i].collider.GetComponent<PlayerController> ();
 				if (player != null) {
-					player.DamagePlayer (damage);
+					float distance = Vector3.Distance (transform.position, player.transform.position);
+					float normal = ((damage - minDamage) * ((radius - distance) / radius)) + minDamage;
+					player.DamagePlayer (normal);
 				}
 			}
 		}
