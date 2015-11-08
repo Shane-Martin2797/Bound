@@ -170,6 +170,7 @@
      <Compile Include="Assets\Scripts\Spells\DashSpell.cs" />
      <Compile Include="Assets\Scripts\Spells\Spell.cs" />
      <Compile Include="Assets\Scripts\Spells\SpellExtras\AoEBallSpell.cs" />
+     <Compile Include="Assets\Scripts\Spells\SpellExtras\AoEIndicator.cs" />
      <Compile Include="Assets\Scripts\Spells\SpellExtras\Ball.cs" />
      <Compile Include="Assets\Scripts\UI\End\EndGameCont.cs" />
      <Compile Include="Assets\Scripts\UI\End\EndScore.cs" />
