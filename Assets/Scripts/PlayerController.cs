@@ -172,15 +172,11 @@ public class PlayerController : MonoBehaviour
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up, dashDistance, layers.value);
 		if (hit != null) {
 			if (hit.collider != null) {
-				dashTargetPosition = hit.collider.bounds.ClosestPoint (transform.position);
-				/*			
-				PlayerController pHit = hit.collider.gameObject.GetComponent<PlayerController> ();
-				if (pHit != null) {
-					pHit.DamagePlayer (dashDamage);
-					Vector3 normalisedDirection = (pHit.transform.position - transform.position).normalized;
-					pHit.GetComponent<Rigidbody2D> ().AddForce (normalisedDirection * force);
+				if (hit.collider.GetComponent<PolygonCollider2D> () != null) {
+					dashTargetPosition = FindClosestPolygonPoint2D (hit);
+				} else {
+					dashTargetPosition = hit.collider.bounds.ClosestPoint (transform.position);
 				}
-				*/
 			} else {
 				dashTargetPosition = (transform.position + (transform.up * dashDistance));
 			}
@@ -191,6 +187,29 @@ public class PlayerController : MonoBehaviour
 		Dash ();
 	}
 	
+	
+	Vector3 FindClosestPolygonPoint2D (RaycastHit2D hit)
+	{
+		PolygonCollider2D col = hit.collider.GetComponent<PolygonCollider2D> ();
+		float minDistanceSqr = Mathf.Infinity;
+		Vector3 nearestColliderPoint = Vector3.zero;
+		
+		// Scan all collider points to find nearest
+		foreach (Vector3 colliderPoint in col.points) {
+			// Convert to world point
+			Vector3 colliderPointWorld = hit.transform.TransformPoint (colliderPoint);
+			
+			Vector3 diff = hit.point - (Vector2)colliderPointWorld;
+			float distSqr = diff.sqrMagnitude;
+			
+			if (distSqr < minDistanceSqr) {
+				minDistanceSqr = distSqr;
+				nearestColliderPoint = colliderPointWorld;
+			}
+		}
+		
+		return nearestColliderPoint;
+	}
 	
 	bool lerping = false;
 	float timer = 0;
