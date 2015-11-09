@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d270247adfb5d19478d869b6cb61f8ce
-timeCreated: 1447049002
+guid: cc65888a0d419bc45bd6e6cb50c5dcd8
+timeCreated: 1447056129
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -135,7 +135,7 @@ ModelImporter:
     4300002: LP_ghost_dress
     4300004: heal_spell
     4300006: damage_spell
-    7400000: Take 001
+    7400000: RunGhost
     9500000: //RootNode
     11100000: //RootNode
     13700000: damage_spell
@@ -163,11 +163,11 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: RunGhost
       takeName: Take 001
       firstFrame: 0
       lastFrame: 89
-      wrapMode: 2
+      wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
@@ -300,21 +300,21 @@ ModelImporter:
         weight: 1
       - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigSpine4/CATRigSpine5/CATRigHub002/CATRigSpine1
           1
-        weight: 1
+        weight: 0
       - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigSpine4/CATRigSpine5/CATRigHub002/CATRigSpine1
           1/CATRigSpine2 1
-        weight: 1
+        weight: 0
       - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigSpine4/CATRigSpine5/CATRigHub002/CATRigSpine1
           1/CATRigSpine2 1/CATRigHub003
-        weight: 1
+        weight: 0
       - path: damage_spell
-        weight: 1
+        weight: 0
       - path: heal_spell
-        weight: 1
+        weight: 0
       - path: LP_ghost_dress
-        weight: 1
+        weight: 0
       - path: LP_Ghost_Girl
-        weight: 1
+        weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
     isReadable: 1

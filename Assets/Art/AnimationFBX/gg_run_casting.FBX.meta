@@ -135,7 +135,7 @@ ModelImporter:
     4300002: LP_ghost_dress
     4300004: heal_spell
     4300006: damage_spell
-    7400000: Take 001
+    7400000: GhostRunCasting
     9500000: //RootNode
     11100000: //RootNode
     13700000: damage_spell
@@ -151,7 +151,13 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: 
+    animationImportErrors: '
+
+      Imported file ''gg_run_casting'' conversion failed: Required human bone ''Head''
+      not found
+
+
+'
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
@@ -163,7 +169,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: GhostRunCasting
       takeName: Take 001
       firstFrame: 0
       lastFrame: 89

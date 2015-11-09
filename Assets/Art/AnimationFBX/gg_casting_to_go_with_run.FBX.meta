@@ -135,7 +135,7 @@ ModelImporter:
     4300002: LP_ghost_dress
     4300004: heal_spell
     4300006: damage_spell
-    7400000: Take 001
+    7400000: GhostTopCast
     9500000: //RootNode
     11100000: //RootNode
     13700000: damage_spell
@@ -163,11 +163,11 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: GhostTopCast
       takeName: Take 001
       firstFrame: 0
       lastFrame: 89
-      wrapMode: 2
+      wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

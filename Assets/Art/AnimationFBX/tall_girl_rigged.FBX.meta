@@ -134,6 +134,7 @@ ModelImporter:
     4300004: head
     7400000: Take 001
     9500000: //RootNode
+    11100000: //RootNode
     13700000: dress
     13700002: head
     13700004: LP_TALL GIRL
@@ -195,7 +196,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
