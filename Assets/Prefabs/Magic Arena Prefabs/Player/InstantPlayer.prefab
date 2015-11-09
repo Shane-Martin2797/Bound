@@ -368,7 +368,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.45884562, y: 9.3889761, z: -1.484375}
+  m_LocalPosition: {x: -5.45884562, y: 9.3889761, z: -2}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 423178}
@@ -744,7 +744,7 @@ MonoBehaviour:
   onCooldown: 0
   cooldownTime: .400000006
   cooldownTimer: 0
-  damageBall: {fileID: 0}
+  damageBall: {fileID: 11433110, guid: 7ec6b9806512dea4db0e881c5ea6b058, type: 2}
   spawnPoint: {fileID: 423178}
   damage: 15
 --- !u!114 &11482354

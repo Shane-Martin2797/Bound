@@ -49,6 +49,7 @@ public class GameController : SingletonBehaviour<GameController>
 		if (OnTeam1LiveChange != null) {
 			OnTeam1LiveChange (team1Lives);
 		}
+		Debug.Log ("Team1LosesLife " + team1Lives);
 		if (team1Lives <= 0) {
 			GameOver (2);
 		}
@@ -72,17 +73,16 @@ public class GameController : SingletonBehaviour<GameController>
 		winTeam = teamNumber;
 		
 		if (teamNumber == 1) {
-			Application.LoadLevel (Scenes.BlueWin);
+			Application.LoadLevel (Scenes.OrangeWin);
 		}
 		if (teamNumber == 2) {
-			Application.LoadLevel (Scenes.OrangeWin);
+			Application.LoadLevel (Scenes.BlueWin);
 		}
 		for (int i = 0; i < players.Length; ++i) {
 			Destroy (players [i].gameObject);
 		}
 		Destroy (cam.gameObject);
 		Destroy (inCont.gameObject);
-		Application.LoadLevel (Scenes.EndScreen);
 		Destroy (gameObject);
 	}
 }
