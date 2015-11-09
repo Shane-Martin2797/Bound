@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: f615e8f783a06394f988b7d8cd797b23
-timeCreated: 1446908025
+guid: cc4df9944f1135245895d99981bb2cc1
+timeCreated: 1447036016
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: wall
+    100000: LP_TALL_GIRL
     100002: //RootNode
-    400000: wall
+    400000: LP_TALL_GIRL
     400002: //RootNode
-    2300000: wall
-    3300000: wall
-    4300000: wall
+    2300000: LP_TALL_GIRL
+    3300000: LP_TALL_GIRL
+    4300000: LP_TALL_GIRL
   materials:
     importMaterials: 1
     materialName: 0
@@ -68,8 +68,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

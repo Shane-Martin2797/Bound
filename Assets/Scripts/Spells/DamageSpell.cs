@@ -44,7 +44,12 @@ public class DamageSpell : Spell
 				ball.transform.localScale = Vector3.zero;
 				Destroy (ball.GetComponent<Collider2D> ());
 				Destroy (ball.GetComponent<Ball> ());
-				hasInst = true;
+				Destroy (ball.GetComponent<Rigidbody2D>());
+				if(ball != null)
+				{
+					ball.transform.parent = (transform);
+					hasInst = true;
+				}
 			}
 			if (hasInst) {
 				ball.transform.position = spawnPoint.transform.position;
@@ -56,7 +61,7 @@ public class DamageSpell : Spell
 	void IncreaseBallSize ()
 	{
 		if (ball != null) {
-			ball.transform.localScale += new Vector3 (Time.deltaTime, Time.deltaTime, Time.deltaTime) / player.castTime * normalX;
+			ball.transform.localScale += new Vector3 (Time.deltaTime, Time.deltaTime, 0) / player.castTime * normalX;
 			if (ball.transform.localScale.x >= normalX) {
 				ResetBallSize ();
 			}
@@ -64,7 +69,7 @@ public class DamageSpell : Spell
 	}
 	void ResetBallSize ()
 	{
-		ball.transform.localScale = Vector3.zero;
+		ball.transform.localScale = Vector3.forward * normalX;
 	}
 	
 	public override void ResetValues ()

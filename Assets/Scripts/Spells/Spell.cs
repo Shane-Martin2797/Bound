@@ -54,7 +54,7 @@ public abstract class Spell : MonoBehaviour
 			}
 		}
 		if (canCast) {
-			Shoot ();
+			ReleaseCast();
 		}
 	}
 	
@@ -62,6 +62,7 @@ public abstract class Spell : MonoBehaviour
 	//charge and will be used to cast the spell upon release of the button.
 	public virtual void ReleaseCast ()
 	{
+		Shoot ();
 	}
 	
 	public virtual void OnSpellAwake ()

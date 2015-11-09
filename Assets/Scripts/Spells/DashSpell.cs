@@ -18,6 +18,10 @@ public class DashSpell : Spell
 				}
 			}
 		}
+		if(canCast)
+		{
+			ReleaseCast();
+		}
 	}
 	
 	public override void Charge ()

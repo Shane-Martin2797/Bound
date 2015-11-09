@@ -39,9 +39,9 @@ public class PlayerController : MonoBehaviour
 	void Awake ()
 	{
 		DamagePlayer (-maxHealth);
-		DontDestroyOnLoad (this.gameObject);
+		DontDestroyOnLoad (gameObject);
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -243,6 +243,7 @@ public class PlayerController : MonoBehaviour
 		if (GameController.Instance != null) {
 			if (team == 1) {
 				GameController.Instance.Team1LosesLife ();
+				Debug.Log ("Team 1");
 			} else if (team == 2) {
 				GameController.Instance.Team2LosesLife ();
 			} else {
@@ -262,6 +263,7 @@ public class PlayerController : MonoBehaviour
 	
 	void OnDestroy ()
 	{
+		Debug.Log ("Destroyed");
 		ReleaseActiveInputDevice ();
 	}
 	
