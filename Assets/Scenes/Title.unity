@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -65,7 +68,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -246,12 +248,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 438694, guid: 01efe919924702344a218cd542b0f45e, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11493126, guid: 01efe919924702344a218cd542b0f45e, type: 2}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 839213502}
+    - target: {fileID: 3335712, guid: 01efe919924702344a218cd542b0f45e, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: c880aae128cef5f46be8e763d41e32fa, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01efe919924702344a218cd542b0f45e, type: 2}
   m_IsPrefabParent: 0
@@ -1080,11 +1086,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 475868, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.5411549
+      value: 21.5499992
       objectReference: {fileID: 0}
     - target: {fileID: 475868, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.3889761
+      value: 9.10000038
       objectReference: {fileID: 0}
     - target: {fileID: 475868, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1100,20 +1106,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 475868, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 475868, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -1.62920685e-07
       objectReference: {fileID: 0}
     - target: {fileID: 475868, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11473726, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 518257181}
+    - target: {fileID: 3330332, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 7edcc16373ada6343a1ddb95148c210e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e28a098cd67581458ed74847263adc6, type: 2}
   m_IsPrefabParent: 0
@@ -4123,12 +4133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 98598cd79371cfd48b57fc7acbb5e348, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4305,11 +4309,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 477028, guid: ed9404556722dbf47b483084efd96140, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477028, guid: ed9404556722dbf47b483084efd96140, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -1.62920685e-07
       objectReference: {fileID: 0}
     - target: {fileID: 477028, guid: ed9404556722dbf47b483084efd96140, type: 2}
       propertyPath: m_RootOrder
@@ -4319,6 +4323,10 @@ Prefab:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 518257181}
+    - target: {fileID: 3378530, guid: ed9404556722dbf47b483084efd96140, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: c880aae128cef5f46be8e763d41e32fa, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed9404556722dbf47b483084efd96140, type: 2}
   m_IsPrefabParent: 0
@@ -4347,13 +4355,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 66a015cf934f6eb42aa1f66fed8d280c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 76b703ee17a913e42bd31c009a48f023, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -4961,12 +4968,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 22
@@ -6142,12 +6143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
@@ -8706,7 +8701,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ForceModuleActive: 0
+  m_AllowActivationOnStandalone: 0
 --- !u!114 &1976742311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8724,7 +8719,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_ForceModuleActive: 0
+  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &1976742312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9156,7 +9151,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 486268, guid: 3c4610303a2a25841af94e802b5dad89, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.5411549
+      value: 22.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 486268, guid: 3c4610303a2a25841af94e802b5dad89, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9190,6 +9185,10 @@ Prefab:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 839213502}
+    - target: {fileID: 3363850, guid: 3c4610303a2a25841af94e802b5dad89, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 7edcc16373ada6343a1ddb95148c210e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c4610303a2a25841af94e802b5dad89, type: 2}
   m_IsPrefabParent: 0
@@ -9327,12 +9326,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
