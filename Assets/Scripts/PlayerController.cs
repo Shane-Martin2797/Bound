@@ -23,7 +23,10 @@ public class PlayerController : MonoBehaviour
 	public InControl.InputDevice inputDevice { get; private set; }
 	public bool hasInputDevice { get { return inputDevice != null; } }
 	
-	
+	public AudioClip girlDeathSound1;
+	public AudioClip girlDeathSound2;
+	public bool playedSound1 = true;
+	public bool playedSound2 = false;
 	public SpellBook spellBook;
 	public int team = 0;
 	public float dashDistance = 10;
@@ -35,11 +38,13 @@ public class PlayerController : MonoBehaviour
 	public float maxHealth = 120;
 	public float castTime = 0;
 	public GameObject healthBar;
-	
+	public AudioSource audio;
+
 	void Awake ()
 	{
 		DamagePlayer (-maxHealth);
 		DontDestroyOnLoad (gameObject);
+		audio = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -240,6 +245,17 @@ public class PlayerController : MonoBehaviour
 	
 	void PlayerDied ()
 	{
+		int value = Random.Range (1, 4);
+		if (value == 1 || value == 2)
+		{
+			Debug.Log ("Dying sound1");
+			audio.PlayOneShot(girlDeathSound1, 0.1f);
+		}
+		if (value == 3 || value == 4)
+		{
+			Debug.Log ("Dying sound2");
+			audio.PlayOneShot(girlDeathSound2, 0.1f);
+		}
 		if (GameController.Instance != null) {
 			if (team == 1) {
 				GameController.Instance.Team1LosesLife ();
