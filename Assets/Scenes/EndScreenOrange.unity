@@ -4423,7 +4423,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 657975633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.206110954, y: 8.27531242, z: -19.4204369}
+  m_LocalPosition: {x: -.206110954, y: 8.27531242, z: -21.8899994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2114530042}
@@ -6074,7 +6074,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 970107627}
   m_LocalRotation: {x: 0, y: -.985763609, z: 0, w: .168137133}
-  m_LocalPosition: {x: 3.59800005, y: 11.4849997, z: -27.559}
+  m_LocalPosition: {x: 3.63000011, y: 11.4849997, z: -27.9720001}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 316301847}
@@ -7567,7 +7567,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -9923,7 +9923,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1541425341}
   m_LocalRotation: {x: 0, y: .117587201, z: 0, w: .993062615}
-  m_LocalPosition: {x: -368.290009, y: -338.980011, z: 2.24000168}
+  m_LocalPosition: {x: -368.089996, y: -338.980011, z: -.319999993}
   m_LocalScale: {x: 5, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 1166653518}
@@ -10986,7 +10986,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: -10, y: -26}
+  m_AnchoredPosition: {x: 1, y: -3}
   m_SizeDelta: {x: 306, y: 50}
   m_Pivot: {x: .5, y: 1}
 --- !u!114 &1770473659
@@ -11032,7 +11032,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Organge Team Wins
+  m_Text: 'Organge Team Wins!
 
 '
 --- !u!222 &1770473661
@@ -11064,7 +11064,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1775645224}
   m_LocalRotation: {x: 0, y: -.986069679, z: 0, w: .166332975}
-  m_LocalPosition: {x: 3.1730001, y: 11.4840002, z: -27.5160007}
+  m_LocalPosition: {x: 3.20499992, y: 11.4840002, z: -27.9290009}
   m_LocalScale: {x: .600000024, y: .600000024, z: .600000024}
   m_Children:
   - {fileID: 901023810}
