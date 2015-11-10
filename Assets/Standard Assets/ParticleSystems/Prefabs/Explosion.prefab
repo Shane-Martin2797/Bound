@@ -50,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -3517,10 +3517,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 746094726
+        rgba: 741969099
       minMaxState: 0
     startSize:
-      scalar: 50
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3535,7 +3535,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .600000024
+          value: .200000003
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4490,10 +4490,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 2449473535
+        rgba: 2438452466
       minMaxState: 0
     startSize:
-      scalar: 600
+      scalar: 30
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5503,10 +5503,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4281466876
       minMaxState: 0
     startSize:
-      scalar: 500
+      scalar: 30
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5521,7 +5521,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .600000024
+          value: .0333333351
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6506,10 +6506,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4278979738
       minMaxState: 0
     startSize:
-      scalar: 40
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6524,7 +6524,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .5
+          value: .200000003
           inSlope: 0
           outSlope: 0
           tangentMode: 0
