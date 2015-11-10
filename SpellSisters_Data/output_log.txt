@@ -1,0 +1,51 @@
+Initialize engine version: 5.1.3f1 (b0a23b31c3d8)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 550 Ti (ID=0x1244)
+    Vendor:   NVIDIA
+    VRAM:     978 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.077 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: F:\Backup Files\Spell Sisters\SpellSisters_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: c484 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.200553 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2888.
+Total: 0.743300 ms (FindLiveObjects: 0.122182 ms CreateObjectMapping: 0.081644 ms MarkObjects: 0.514810 ms  DeleteObjects: 0.023812 ms)
+
+Destroyed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Destroyed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Destroyed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Destroyed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+

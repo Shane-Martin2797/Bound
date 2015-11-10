@@ -1,8 +1,25 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../TestCode/Assets/Scritps/CSVReader.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\UIStartText.cs">
     <Files>
-      <File FileName="../../TestCode/Assets/Scritps/CSVReader.cs" Line="95" Column="27" />
+      <File FileName="Assets\Scripts\AnimationControllerTG.cs" Line="34" Column="32" />
+      <File FileName="Assets\Scripts\AnimationController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Spells\DamageSpell.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DynamicCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Title\TitleManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Spells\DashSpell.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Spells\Spell.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Spells\SpellExtras\AoEBallSpell.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Spells\SpellExtras\AoEIndicator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Spells\SpellExtras\Ball.cs" Line="1" Column="1" />
+      <File FileName="Assets\InControl\Source\InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Scenes.cs" Line="1" Column="1" />
+      <File FileName="..\..\Desktop\RPGKingsmen\Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PanelFader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\UITimer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\UIStartText.cs" Line="25" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
