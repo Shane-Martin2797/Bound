@@ -49,7 +49,6 @@ public class GameController : SingletonBehaviour<GameController>
 		if (OnTeam1LiveChange != null) {
 			OnTeam1LiveChange (team1Lives);
 		}
-		Debug.Log ("Team1LosesLife " + team1Lives);
 		if (team1Lives <= 0) {
 			GameOver (2);
 		}
