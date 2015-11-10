@@ -279,7 +279,6 @@ public class PlayerController : MonoBehaviour
 	
 	void OnDestroy ()
 	{
-		Debug.Log ("Destroyed");
 		ReleaseActiveInputDevice ();
 	}
 	

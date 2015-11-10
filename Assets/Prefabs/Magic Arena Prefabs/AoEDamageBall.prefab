@@ -329,6 +329,7 @@ MonoBehaviour:
   lifetime: 5
   speed: 15
   particles: {fileID: 171060}
+  explosion: {fileID: 100010, guid: 54440fccfb984465aacb371f2ac418a5, type: 2}
   radius: 5
   minDamage: 5
 --- !u!198 &19804424
@@ -3769,6 +3770,10 @@ Prefab:
       propertyPath: particles
       value: 
       objectReference: {fileID: 171060}
+    - target: {fileID: 0}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 100010, guid: 54440fccfb984465aacb371f2ac418a5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118416}

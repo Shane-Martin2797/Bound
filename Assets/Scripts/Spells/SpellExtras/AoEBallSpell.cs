@@ -24,6 +24,6 @@ public class AoEBallSpell : Ball
 				}
 			}
 		}
-		Destroy (this.gameObject);
+		base.CleanUp ();
 	}
 }

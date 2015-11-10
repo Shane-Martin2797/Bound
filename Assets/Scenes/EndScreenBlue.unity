@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -6043,7 +6043,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875268743}
   m_LocalRotation: {x: 0, y: .0969337076, z: 0, w: .995290875}
-  m_LocalPosition: {x: -366.779999, y: -338.980011, z: 4.38999987}
+  m_LocalPosition: {x: -367.579987, y: -338.980011, z: 2.74000001}
   m_LocalScale: {x: 6.40946054, y: 5.80473328, z: 4.25968456}
   m_Children: []
   m_Father: {fileID: 542998353}
@@ -6185,7 +6185,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 894245482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.206110954, y: 8.27531242, z: -23.0499992}
+  m_LocalPosition: {x: -.206110954, y: 8.27531242, z: -24.3799992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1269412656}
@@ -6617,7 +6617,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985887463}
   m_LocalRotation: {x: 0, y: -.985763609, z: 0, w: .168137133}
-  m_LocalPosition: {x: 3.94700003, y: 11.6251354, z: -27.2399998}
+  m_LocalPosition: {x: 3.81800008, y: 11.6251354, z: -27.5049992}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 506341297}
@@ -6960,7 +6960,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036574252}
   m_LocalRotation: {x: 0, y: -.986069679, z: 0, w: .166332975}
-  m_LocalPosition: {x: 3.523, y: 11.6160002, z: -27.2329998}
+  m_LocalPosition: {x: 3.39400005, y: 11.6160002, z: -27.4979992}
   m_LocalScale: {x: .600000024, y: .600000024, z: .600000024}
   m_Children:
   - {fileID: 919685210}
@@ -10902,7 +10902,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -46}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 270, y: 50}
   m_Pivot: {x: .5, y: 1}
 --- !u!114 &1597507618
@@ -10936,7 +10936,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Blue Team Wins
+  m_Text: 'Blue Team Wins!
 
 '
 --- !u!222 &1597507619
@@ -13511,14 +13511,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099404031}
   m_LocalRotation: {x: 0, y: -.106960319, z: 0, w: .994263351}
-  m_LocalPosition: {x: 0, y: 0, z: 13}
+  m_LocalPosition: {x: 0, y: 0, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 145535376}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -54}
+  m_AnchoredPosition: {x: -11, y: -54}
   m_SizeDelta: {x: 121, y: 62}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2099404033
