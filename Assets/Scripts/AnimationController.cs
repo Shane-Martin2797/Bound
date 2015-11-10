@@ -32,7 +32,7 @@ public class AnimationController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKey (KeyCode.O)) 
+		if (Input.GetKey (KeyCode.O) || Input.GetKey (KeyCode.P)) 
 		{
 			animation.Blend("GhostTopCast");
 			isShooting = true;
