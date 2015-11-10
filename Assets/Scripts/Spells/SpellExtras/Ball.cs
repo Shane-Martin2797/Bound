@@ -7,20 +7,19 @@ public class Ball : CollisionTriggerBehaviour
 	public float lifetime = 5f;
 	public float speed = 5;
 	public GameObject particles;
+	public GameObject explosion;
 
-	public virtual void OnEnable()
+	public virtual void OnEnable ()
 	{
-		if(particles != null)
-		{
-			particles.SetActive(true);
+		if (particles != null) {
+			particles.SetActive (true);
 		}
 	}
 
-	public virtual void OnDisable()
+	public virtual void OnDisable ()
 	{
-		if(particles != null)
-		{
-			particles.SetActive(false);
+		if (particles != null) {
+			particles.SetActive (false);
 		}
 	}
 
@@ -48,6 +47,9 @@ public class Ball : CollisionTriggerBehaviour
 	
 	public virtual void CleanUp ()
 	{
+		if (explosion != null) {
+			Instantiate (explosion, transform.position, transform.rotation);
+		}
 		Destroy (this.gameObject);
 	}
 }
