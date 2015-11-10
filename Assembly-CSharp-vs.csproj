@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{84A4699E-9943-56B6-9A12-284239BB2B7E}</ProjectGuid>
+	<ProjectGuid>{6F1733A4-AC1B-44D7-5439-D4EB62B2BDE2}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -158,11 +158,14 @@
      <Compile Include="Assets\InControl\Source\XInput\XInputDotNetPure\GamePad.cs" />
      <Compile Include="Assets\InControl\Source\XInput\XInputDotNetPure\Utils.cs" />
      <Compile Include="Assets\InControl\Test\TestInputManager.cs" />
+     <Compile Include="Assets\Scripts\AnimationController.cs" />
+     <Compile Include="Assets\Scripts\AnimationControllerTG.cs" />
      <Compile Include="Assets\Scripts\AudioController.cs" />
      <Compile Include="Assets\Scripts\BGMController.cs" />
      <Compile Include="Assets\Scripts\DynamicCamera.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Interfaces.cs" />
+     <Compile Include="Assets\Scripts\PanelFader.cs" />
      <Compile Include="Assets\Scripts\Player1Keyboard.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RespawnPoint.cs" />
@@ -178,6 +181,7 @@
      <Compile Include="Assets\Scripts\UI\Scenes.cs" />
      <Compile Include="Assets\Scripts\UI\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\UI\UILives.cs" />
+     <Compile Include="Assets\Scripts\UI\UIStartText.cs" />
      <Compile Include="Assets\Scripts\UI\UITimer.cs" />
      <None Include="Assets\InControl\README\README.txt" />
      <None Include="Assets\Art\Skyboxes\_skybox info.txt" />
@@ -200,6 +204,10 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files (x86)/Unity 5/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{2A6B2842-54B7-5706-E09C-B795E6B7195E}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
